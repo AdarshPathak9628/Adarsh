@@ -34,9 +34,9 @@ const MapOfIndia = () => {
         </mesh>
         {/* Floating Profile Image */}
         <Html position={[0, 6, 2]} center>
-          <div className="flex flex-col items-center bg-white/5 p-6 rounded-2xl border border-white/20 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] pointer-events-auto">
-            <img src={profileImg.src} alt="Profile" className="w-40 h-40 rounded-full object-cover border-4 border-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.5)]" />
-            <p className="text-white mt-4 font-bold text-2xl drop-shadow-md">Adarsh Pathak</p>
+          <div className="flex flex-col items-center bg-white/5 p-4 sm:p-6 rounded-2xl border border-white/20 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] pointer-events-auto transform scale-75 sm:scale-100 origin-center transition-transform">
+            <img src={profileImg.src} alt="Profile" className="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.5)]" />
+            <p className="text-white mt-3 sm:mt-4 font-bold text-xl sm:text-2xl drop-shadow-md">Adarsh Pathak</p>
           </div>
         </Html>
       </group>
@@ -72,9 +72,9 @@ const MapOfIndia = () => {
         </mesh>
         {/* Floating Certificate */}
         <Html position={[0, 7, 3]} center>
-          <div className="bg-white/5 p-4 rounded-2xl border border-yellow-500/30 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(255,165,0,0.2)] pointer-events-auto w-72 transform hover:scale-105 transition-transform duration-300">
+          <div className="bg-white/5 p-3 sm:p-4 rounded-2xl border border-yellow-500/30 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(255,165,0,0.2)] pointer-events-auto w-64 sm:w-72 transform scale-75 sm:scale-100 hover:scale-105 sm:hover:scale-105 transition-transform duration-300 origin-center">
             <img src={oracleCert.src} alt="Oracle Cert" className="w-full rounded-lg shadow-lg" />
-            <p className="text-yellow-400 mt-3 font-bold text-center text-lg drop-shadow-md">Oracle Cloud Certified</p>
+            <p className="text-yellow-400 mt-2 sm:mt-3 font-bold text-center text-md sm:text-lg drop-shadow-md">Oracle Cloud Certified</p>
           </div>
         </Html>
       </group>
