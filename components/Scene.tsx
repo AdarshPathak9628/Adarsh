@@ -8,6 +8,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+import { Html, Image } from "@react-three/drei";
+import profileImg from "../src/assets/images/My profile image.png";
+import oracleCert from "../src/assets/images/ODBCS25CP.jpeg";
+
 const MapOfIndia = () => {
   return (
     <group>
@@ -17,29 +21,83 @@ const MapOfIndia = () => {
         <meshStandardMaterial color="#111111" />
       </mesh>
       
-      {/* Zone 1: North */}
-      <mesh position={[0, 0, -20]} castShadow>
-        <boxGeometry args={[4, 8, 4]} />
-        <meshStandardMaterial color="#88ccff" />
-      </mesh>
+      {/* Zone 1: North (Mountains) */}
+      <group position={[0, 0, -20]}>
+        <mesh position={[-2, 2, -2]} castShadow>
+          <coneGeometry args={[3, 8, 4]} />
+          <meshStandardMaterial color="#ffffff" roughness={0.8} />
+        </mesh>
+        <mesh position={[2, 3, 0]} castShadow>
+          <coneGeometry args={[4, 10, 4]} />
+          <meshStandardMaterial color="#dddddd" roughness={0.8} />
+        </mesh>
+        {/* Floating Profile Image */}
+        <Html position={[0, 6, 2]} center>
+          <div className="flex flex-col items-center bg-black/50 p-4 rounded-xl border border-white/20 backdrop-blur-md pointer-events-auto">
+            <img src={profileImg.src} alt="Profile" className="w-32 h-32 rounded-full object-cover border-4 border-blue-400" />
+            <p className="text-white mt-2 font-bold text-xl">Adarsh Pathak</p>
+          </div>
+        </Html>
+      </group>
       
-      {/* Zone 2: Delhi */}
-      <mesh position={[-5, 0, -5]} castShadow>
-        <boxGeometry args={[3, 4, 3]} />
-        <meshStandardMaterial color="#44ff44" />
-      </mesh>
+      {/* Zone 2: Delhi (India Gate & Purana Qila) */}
+      <group position={[-5, 0, -5]}>
+        {/* India Gate Abstract */}
+        <mesh position={[0, 3, 0]} castShadow>
+          <boxGeometry args={[4, 6, 2]} />
+          <meshStandardMaterial color="#d4a373" />
+        </mesh>
+        <mesh position={[0, 1.5, 0]}>
+          <boxGeometry args={[2, 4, 2.1]} />
+          <meshStandardMaterial color="#111111" /> {/* Cutout effect */}
+        </mesh>
+        {/* Purana Qila Abstract */}
+        <mesh position={[4, 2, -3]} castShadow>
+          <cylinderGeometry args={[1.5, 1.5, 4, 8]} />
+          <meshStandardMaterial color="#8b5a2b" />
+        </mesh>
+      </group>
       
-      {/* Zone 3: UP Hub */}
-      <mesh position={[2, 0, 5]} castShadow>
-        <boxGeometry args={[5, 6, 5]} />
-        <meshStandardMaterial color="#ffaa00" />
-      </mesh>
+      {/* Zone 3: UP Hub (Ram Mandir & Maha Kumbh) */}
+      <group position={[2, 0, 5]}>
+        {/* Ram Mandir Abstract */}
+        <mesh position={[0, 2, 0]} castShadow>
+          <boxGeometry args={[6, 4, 6]} />
+          <meshStandardMaterial color="#f4a261" />
+        </mesh>
+        <mesh position={[0, 5, 0]} castShadow>
+          <coneGeometry args={[3, 6, 4]} />
+          <meshStandardMaterial color="#e76f51" />
+        </mesh>
+        {/* Floating Certificate */}
+        <Html position={[0, 7, 3]} center>
+          <div className="bg-black/50 p-4 rounded-xl border border-yellow-500/50 backdrop-blur-md pointer-events-auto w-64 transform hover:scale-110 transition-transform">
+            <img src={oracleCert.src} alt="Oracle Cert" className="w-full rounded-md" />
+            <p className="text-yellow-400 mt-2 font-bold text-center text-sm">Oracle Cloud Certified</p>
+          </div>
+        </Html>
+      </group>
       
-      {/* Zone 4: East */}
-      <mesh position={[15, 0, 10]} castShadow>
-        <boxGeometry args={[4, 5, 4]} />
-        <meshStandardMaterial color="#3333ff" />
-      </mesh>
+      {/* Zone 4: East (Howrah Bridge) */}
+      <group position={[15, 0, 10]}>
+        {/* Howrah Bridge Abstract */}
+        <mesh position={[-3, 4, 0]} castShadow>
+          <boxGeometry args={[1, 8, 2]} />
+          <meshStandardMaterial color="#7f8c8d" />
+        </mesh>
+        <mesh position={[3, 4, 0]} castShadow>
+          <boxGeometry args={[1, 8, 2]} />
+          <meshStandardMaterial color="#7f8c8d" />
+        </mesh>
+        <mesh position={[0, 6, 0]} rotation={[0, 0, Math.PI / 2]} castShadow>
+          <boxGeometry args={[1, 6, 0.5]} />
+          <meshStandardMaterial color="#95a5a6" />
+        </mesh>
+        <mesh position={[0, 2, 0]} rotation={[0, 0, Math.PI / 2]} castShadow>
+          <boxGeometry args={[1, 8, 2]} />
+          <meshStandardMaterial color="#34495e" />
+        </mesh>
+      </group>
     </group>
   );
 };
