@@ -176,7 +176,6 @@ export default function Scene() {
       <Canvas shadows>
         <CameraAndLighting />
         <MapOfIndia />
-        <Environment preset="city" />
       </Canvas>
     </div>
   );
