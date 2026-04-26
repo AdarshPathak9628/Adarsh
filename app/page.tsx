@@ -53,8 +53,8 @@ export default function Portfolio() {
         
         {/* Sticky Premium Navbar */}
         <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 md:px-12 bg-black/20 backdrop-blur-md border-b border-white/10 pointer-events-auto transition-all">
-          <div className="text-xl md:text-2xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-            AP<span className="text-white">.</span>
+          <div className="text-lg md:text-xl font-black tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+            Adarsh Pathak
           </div>
           <a 
             href="/Resume.pdf" 
@@ -98,13 +98,6 @@ export default function Portfolio() {
               >
                 View Credentials
               </button>
-              <a 
-                href="/Resume.pdf" 
-                download 
-                className="px-8 md:px-10 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white rounded-full transition-all font-bold text-sm md:text-lg shadow-[0_0_20px_rgba(0,255,255,0.3)] hover:shadow-[0_0_40px_rgba(0,255,255,0.6)] flex items-center gap-2 w-full md:w-auto justify-center"
-              >
-                Download CV
-              </a>
             </div>
           </motion.div>
         </section>
@@ -242,9 +235,9 @@ export default function Portfolio() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { title: "Cart Management System", tech: "Django, MySQL, Bootstrap", desc: "A robust e-commerce cart backend handling complex relational data mapping and optimized ORM queries." },
-                { title: "MultiShop E-Commerce", tech: "Django, MySQL, JS", desc: "Full-stack scalable digital storefront with secure checkout, product management, and dynamic UI rendering." },
-                { title: "Hospital Management", tech: "Python, MySQL", desc: "A comprehensive terminal-to-database architecture for secure patient record management and appointment scheduling." }
+                { title: "Cart Management System", tech: "Django, MySQL, Bootstrap", desc: "An enterprise-grade e-commerce cart backend featuring complex relational data mapping, optimized Django ORM queries, session-based cart persistence, and a responsive Bootstrap frontend for seamless product browsing and order processing." },
+                { title: "MultiShop E-Commerce", tech: "Django, MySQL, JavaScript", desc: "A full-stack scalable digital storefront with user authentication, dynamic product catalog management, secure checkout workflows, inventory tracking, and an admin dashboard—all powered by Django REST APIs and a MySQL relational database." },
+                { title: "Hospital Management System", tech: "Python, MySQL", desc: "A comprehensive healthcare management platform handling patient registration, doctor assignment, OPD appointment scheduling, role-based access control for staff and administrators, and automated report generation with secure MySQL-backed data persistence." }
               ].map(proj => (
                 <div key={proj.title} className="bg-black/40 p-8 rounded-[2rem] border border-white/10 hover:border-purple-500/50 hover:-translate-y-2 transition-all duration-300 pointer-events-auto flex flex-col group shadow-xl">
                   <h3 className="text-2xl font-bold text-white group-hover:text-purple-300 transition-colors mb-4">{proj.title}</h3>
@@ -274,7 +267,7 @@ export default function Portfolio() {
               Let's Build The Future
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 mb-16 max-w-2xl mx-auto relative z-10 font-medium">
-              Ready to collaborate on cutting-edge data science and full-stack solutions. Reach out today.
+              Ready to collaborate on cutting-edge DevOps, cloud infrastructure, and full-stack solutions. Reach out today.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
