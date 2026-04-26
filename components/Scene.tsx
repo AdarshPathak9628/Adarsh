@@ -41,7 +41,7 @@ const MapOfIndia = () => {
         </Html>
       </group>
       
-      {/* Zone 2: Delhi (India Gate & Purana Qila) */}
+      {/* Zone 2: Delhi (India Gate) */}
       <group position={[-5, 0, -5]}>
         {/* India Gate Abstract */}
         <mesh position={[0, 3, 0]} castShadow receiveShadow>
@@ -52,29 +52,33 @@ const MapOfIndia = () => {
           <boxGeometry args={[2, 4, 2.1]} />
           <meshPhysicalMaterial color="#000000" metalness={1} roughness={0} /> {/* Cutout effect */}
         </mesh>
-        {/* Purana Qila Abstract */}
-        <mesh position={[4, 2, -3]} castShadow receiveShadow>
-          <cylinderGeometry args={[1.5, 1.5, 4, 8]} />
-          <meshPhysicalMaterial color="#2d3436" metalness={0.7} roughness={0.4} emissive="#00ff88" emissiveIntensity={0.05} />
-        </mesh>
       </group>
       
-      {/* Zone 3: UP Hub (Ram Mandir & Maha Kumbh) */}
+      {/* Zone 3: Kings of UP Hub (Ram Mandir, Purana Qila, Maha Kumbh) */}
       <group position={[2, 0, 5]}>
-        {/* Ram Mandir Abstract */}
-        <mesh position={[0, 2, 0]} castShadow receiveShadow>
-          <boxGeometry args={[6, 4, 6]} />
-          <meshPhysicalMaterial color="#4a3000" metalness={0.9} roughness={0.3} emissive="#ffaa00" emissiveIntensity={0.2} clearcoat={1} />
+        {/* Ram Mandir Abstract (Majestic Scale) */}
+        <mesh position={[0, 3, 0]} castShadow receiveShadow>
+          <boxGeometry args={[8, 6, 8]} />
+          <meshPhysicalMaterial color="#4a3000" metalness={0.9} roughness={0.1} emissive="#ffaa00" emissiveIntensity={0.4} clearcoat={1} />
         </mesh>
-        <mesh position={[0, 5, 0]} castShadow receiveShadow>
-          <coneGeometry args={[3, 6, 4]} />
-          <meshPhysicalMaterial color="#5a2000" metalness={0.8} roughness={0.2} emissive="#ff5500" emissiveIntensity={0.3} clearcoat={1} />
+        <mesh position={[0, 7.5, 0]} castShadow receiveShadow>
+          <coneGeometry args={[4, 9, 4]} />
+          <meshPhysicalMaterial color="#5a2000" metalness={0.8} roughness={0.2} emissive="#ff5500" emissiveIntensity={0.6} clearcoat={1} />
         </mesh>
-        {/* Floating Certificate */}
-        <Html position={[0, 7, 3]} center>
-          <div className="bg-white/5 p-3 sm:p-4 rounded-2xl border border-yellow-500/30 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(255,165,0,0.2)] pointer-events-auto w-64 sm:w-72 transform scale-75 sm:scale-100 hover:scale-105 sm:hover:scale-105 transition-transform duration-300 origin-center">
-            <img src={oracleCert.src} alt="Oracle Cert" className="w-full rounded-lg shadow-lg" />
-            <p className="text-yellow-400 mt-2 sm:mt-3 font-bold text-center text-md sm:text-lg drop-shadow-md">Oracle Cloud Certified</p>
+        {/* Purana Qila Abstract (Moved to UP Hub, Majestic Scale) */}
+        <mesh position={[7, 3, -4]} castShadow receiveShadow>
+          <cylinderGeometry args={[2.5, 2.5, 6, 8]} />
+          <meshPhysicalMaterial color="#2d3436" metalness={0.9} roughness={0.2} emissive="#ff3300" emissiveIntensity={0.3} clearcoat={0.8} />
+        </mesh>
+        <mesh position={[7, 7, -4]} castShadow receiveShadow>
+          <coneGeometry args={[3, 4, 8]} />
+          <meshPhysicalMaterial color="#1a1a1a" metalness={0.8} roughness={0.3} emissive="#ff3300" emissiveIntensity={0.2} />
+        </mesh>
+        {/* Floating Certificate (Kept as placeholder or removed since we have a modal now) */}
+        <Html position={[0, 10, 4]} center>
+          <div className="bg-white/5 p-3 sm:p-4 rounded-3xl border border-orange-500/50 backdrop-blur-xl shadow-[0_0_50px_rgba(255,165,0,0.3)] pointer-events-auto w-64 sm:w-72 transform scale-75 sm:scale-100 hover:scale-105 sm:hover:scale-105 transition-transform duration-300 origin-center text-center">
+            <h3 className="text-orange-400 font-black text-xl sm:text-2xl drop-shadow-md uppercase tracking-widest">Kings of UP</h3>
+            <p className="text-white mt-1 text-sm font-bold opacity-80">The Majestic Hub</p>
           </div>
         </Html>
       </group>
