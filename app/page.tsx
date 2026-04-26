@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Scene from "@/components/Scene";
 import CertificatesModal from "@/components/CertificatesModal";
 import Lenis from "lenis";
-import { Phone, Mail, Linkedin, Instagram, ArrowRight, CheckCircle2, Award } from "lucide-react";
+import { Phone, Mail, Linkedin, Instagram, ArrowRight, CheckCircle2, Award, Github } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -62,8 +62,8 @@ export default function Portfolio() {
             <h1 className="text-5xl sm:text-6xl md:text-8xl font-black bg-clip-text text-transparent bg-gradient-to-br from-white via-blue-100 to-gray-500 drop-shadow-2xl tracking-tight">
               Adarsh Pathak
             </h1>
-            <p className="mt-6 md:mt-8 text-xl sm:text-2xl md:text-3xl font-medium text-blue-200 drop-shadow-lg tracking-wide uppercase letter-spacing-2">
-              Future Data Science Engineer
+            <p className="mt-6 md:mt-8 text-xl sm:text-2xl md:text-3xl font-medium text-cyan-200 drop-shadow-lg tracking-wide uppercase letter-spacing-2">
+              DevOps Engineer
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4 pointer-events-auto">
               <button 
@@ -72,6 +72,12 @@ export default function Portfolio() {
               >
                 Get In Touch <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
+              <a 
+                href="https://github.com/AdarshPathak9628/" target="_blank" rel="noopener noreferrer"
+                className="px-8 md:px-10 py-4 bg-gray-900 hover:bg-gray-800 border border-gray-700 rounded-full transition-all font-bold text-sm md:text-lg flex items-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+              >
+                <Github className="w-5 h-5" /> View GitHub
+              </a>
               <button 
                 onClick={() => setIsCertModalOpen(true)}
                 className="px-8 md:px-10 py-4 bg-white/10 hover:bg-white/20 border border-white/30 rounded-full backdrop-blur-md transition-all font-bold text-sm md:text-lg flex items-center gap-2"
@@ -91,13 +97,13 @@ export default function Portfolio() {
               </h2>
               <div className="space-y-6 text-gray-300 text-lg md:text-xl leading-relaxed font-medium">
                 <p>
-                  Hailing from Pratapgarh, Uttar Pradesh—the world's largest producer of amla—I was raised by two incredible teachers who instilled in me the core values of discipline, community, and relentless hard work.
+                  Hailing from Pratapgarh—a city globally recognized for its massive agricultural export of Amla—I was raised with a strong foundation in discipline and community values. These early experiences shaped my rigorous approach to problem-solving.
                 </p>
                 <p>
-                  I've always believed in pushing limits. As a Kabaddi team captain and Gold Medalist, I learned leadership. While completing my B.Sc with B.Ed, I taught Mathematics to middle schoolers, honing my ability to break down complex problems.
+                  As a former Kabaddi team captain and Gold Medalist, I developed resilience and strategic leadership. Later, while completing my B.Sc with B.Ed, I taught Mathematics, refining my ability to deconstruct complex technical challenges into manageable solutions.
                 </p>
                 <p>
-                  Now, pursuing my MCA at Lovely Professional University, my ultimate dream is clear: <span className="text-white font-bold">To become a world-class Data Science Engineer</span> and leverage technology to elevate my family and community to a better place.
+                  Currently pursuing my MCA at Lovely Professional University, my ultimate goal is clear: <span className="text-cyan-400 font-bold">To excel as a DevOps Engineer</span>, architecting scalable cloud infrastructure and robust deployment pipelines.
                 </p>
               </div>
             </div>
@@ -119,18 +125,38 @@ export default function Portfolio() {
           <div className="p-8 md:p-12 bg-white/5 backdrop-blur-2xl rounded-[3rem] border border-green-400/30 shadow-[0_8px_32px_0_rgba(0,255,0,0.1)] w-full max-w-2xl mx-4">
             <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-emerald-500 mb-8 md:mb-12 drop-shadow-md">Education</h2>
             <div className="space-y-6 md:space-y-8">
-              <div className="bg-black/30 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-green-400/50 transition-colors">
+              <div className="bg-black/30 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-cyan-400/50 transition-colors pointer-events-auto">
                 <h3 className="text-2xl md:text-4xl font-bold text-white mb-2">MCA</h3>
-                <p className="text-xl md:text-2xl text-green-300 font-medium">Lovely Professional University</p>
+                <a href="https://www.lpu.in/" target="_blank" rel="noopener noreferrer" className="text-xl md:text-2xl text-cyan-300 font-medium hover:underline inline-flex items-center gap-1">
+                  Lovely Professional University <ArrowRight className="w-4 h-4" />
+                </a>
                 <div className="mt-4 flex items-center gap-2 text-gray-400">
-                  <CheckCircle2 className="w-5 h-5 text-green-400" /> Pursuing advanced computing & data structures
+                  <CheckCircle2 className="w-5 h-5 text-cyan-400" /> Pursuing advanced computing & scalable systems
                 </div>
               </div>
-              <div className="bg-black/30 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-green-400/50 transition-colors">
+              <div className="bg-black/30 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-cyan-400/50 transition-colors pointer-events-auto">
                 <h3 className="text-2xl md:text-4xl font-bold text-white mb-2">B.Sc + B.Ed</h3>
-                <p className="text-xl md:text-2xl text-green-300 font-medium">Shri Krishna University</p>
+                <a href="https://www.skuindia.ac.in/" target="_blank" rel="noopener noreferrer" className="text-xl md:text-2xl text-cyan-300 font-medium hover:underline inline-flex items-center gap-1">
+                  Shri Krishna University <ArrowRight className="w-4 h-4" />
+                </a>
                 <div className="mt-4 flex items-center gap-2 text-gray-400">
-                  <CheckCircle2 className="w-5 h-5 text-green-400" /> Mathematics focus & Teaching Experience
+                  <CheckCircle2 className="w-5 h-5 text-cyan-400" /> Mathematics focus & Analytical modeling
+                </div>
+              </div>
+              <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+                <div className="bg-black/30 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-cyan-400/50 transition-colors pointer-events-auto flex-1">
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-1">12th Grade (Intermediate)</h3>
+                  <a href="https://saicpratapgarh.org/" target="_blank" rel="noopener noreferrer" className="text-lg text-cyan-300 font-medium hover:underline inline-flex items-center gap-1">
+                    St. Anthony's Inter College <ArrowRight className="w-3 h-3" />
+                  </a>
+                  <p className="mt-3 text-2xl font-black text-white">69.00%</p>
+                </div>
+                <div className="bg-black/30 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-cyan-400/50 transition-colors pointer-events-auto flex-1">
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-1">10th Grade (High School)</h3>
+                  <a href="https://saicpratapgarh.org/" target="_blank" rel="noopener noreferrer" className="text-lg text-cyan-300 font-medium hover:underline inline-flex items-center gap-1">
+                    St. Anthony's Inter College <ArrowRight className="w-3 h-3" />
+                  </a>
+                  <p className="mt-3 text-2xl font-black text-white">82.83%</p>
                 </div>
               </div>
             </div>
@@ -138,40 +164,40 @@ export default function Portfolio() {
             <div className="mt-12 pointer-events-auto">
               <button 
                 onClick={() => setIsCertModalOpen(true)}
-                className="w-full py-5 bg-gradient-to-r from-green-500/20 to-emerald-500/20 hover:from-green-500/40 hover:to-emerald-500/40 border border-green-500/50 rounded-2xl transition-all font-bold text-lg md:text-xl flex items-center justify-center gap-3 text-white shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_40px_rgba(16,185,129,0.4)]"
+                className="w-full py-5 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 hover:from-cyan-500/40 hover:to-blue-500/40 border border-cyan-500/50 rounded-2xl transition-all font-bold text-lg md:text-xl flex items-center justify-center gap-3 text-white shadow-[0_0_20px_rgba(0,255,255,0.2)] hover:shadow-[0_0_40px_rgba(0,255,255,0.4)]"
               >
-                <Award className="w-6 h-6" /> View All Certifications
+                <Award className="w-6 h-6" /> View All Credentials & Achievements
               </button>
             </div>
           </div>
         </section>
 
-        {/* Zone 3: UP Hub (Kings of UP - Experience & Skills) */}
+        {/* Zone 3: Professional Journey */}
         <section className="min-h-screen w-full flex flex-col xl:flex-row items-center justify-center xl:justify-end px-4 md:px-24 lg:px-40 pointer-events-none gap-6 md:gap-12 py-20">
-          <div className="p-8 md:p-12 bg-white/5 backdrop-blur-2xl rounded-[3rem] border border-orange-400/30 shadow-[0_8px_32px_0_rgba(255,165,0,0.15)] w-full max-w-2xl text-center xl:text-left mx-4 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
-            <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-500 mb-8 md:mb-12 drop-shadow-md relative">
-              The Journey
+          <div className="p-8 md:p-12 bg-white/5 backdrop-blur-2xl rounded-[3rem] border border-blue-400/30 shadow-[0_8px_32px_0_rgba(0,102,255,0.15)] w-full max-w-2xl text-center xl:text-left mx-4 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+            <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-indigo-500 mb-8 md:mb-12 drop-shadow-md relative">
+              Experience
             </h2>
             <div className="space-y-6 md:space-y-8 relative">
-              <div className="bg-black/40 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-orange-500/50 transition-colors">
+              <div className="bg-black/40 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-blue-500/50 transition-colors">
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Django Backend Developer (Intern)</h3>
-                <p className="text-lg md:text-xl text-yellow-300 font-medium">TECHQRT</p>
+                <p className="text-lg md:text-xl text-cyan-300 font-medium">TECHQRT</p>
                 <p className="text-gray-400 mt-4 font-medium">Architected scalable database structures and optimized RESTful APIs.</p>
               </div>
-              <div className="bg-black/40 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-orange-500/50 transition-colors">
+              <div className="bg-black/40 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-blue-500/50 transition-colors">
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Python Web Trainee</h3>
-                <p className="text-lg md:text-xl text-yellow-300 font-medium">ARUDAN TECHNOLOGIES PVT. LTD.</p>
+                <p className="text-lg md:text-xl text-cyan-300 font-medium">ARUDAN TECHNOLOGIES PVT. LTD.</p>
                 <p className="text-gray-400 mt-4 font-medium">Developed core Python fundamentals and web integration capabilities.</p>
               </div>
             </div>
           </div>
 
-          <div className="p-8 md:p-12 bg-white/5 backdrop-blur-2xl rounded-[3rem] border border-red-400/30 shadow-[0_8px_32px_0_rgba(255,0,0,0.1)] w-full max-w-md text-center mx-4 mt-6 xl:mt-0">
-            <h2 className="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-300 to-orange-500 mb-8 drop-shadow-md">Arsenal</h2>
+          <div className="p-8 md:p-12 bg-white/5 backdrop-blur-2xl rounded-[3rem] border border-cyan-400/30 shadow-[0_8px_32px_0_rgba(0,255,255,0.1)] w-full max-w-md text-center mx-4 mt-6 xl:mt-0">
+            <h2 className="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-500 mb-8 drop-shadow-md">Arsenal</h2>
             <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-              {['Python', 'Django', 'Machine Learning', 'Data Science', 'C++', 'React', 'MySQL', 'Pandas'].map(skill => (
-                <span key={skill} className="px-5 py-2.5 bg-black/40 border border-white/20 hover:border-red-400/50 hover:bg-white/10 rounded-full text-sm md:text-base font-bold transition-colors">
+              {['Python', 'Django', 'Docker', 'Linux', 'AWS / Cloud', 'React', 'MySQL', 'CI/CD'].map(skill => (
+                <span key={skill} className="px-5 py-2.5 bg-black/40 border border-white/20 hover:border-cyan-400/50 hover:bg-cyan-500/10 rounded-full text-sm md:text-base font-bold transition-colors">
                   {skill}
                 </span>
               ))}
@@ -182,9 +208,17 @@ export default function Portfolio() {
         {/* Zone 4: East (Projects) */}
         <section className="min-h-[80vh] w-full flex items-center justify-center pointer-events-none px-4 py-20">
           <div className="p-8 md:p-16 bg-white/5 backdrop-blur-2xl rounded-[3rem] border border-purple-400/30 shadow-[0_8px_32px_0_rgba(128,0,128,0.15)] text-center w-full max-w-6xl mx-4">
-            <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-purple-400 to-pink-500 mb-10 md:mb-16 drop-shadow-md">
-              Featured Projects
-            </h2>
+            <div className="flex flex-col md:flex-row items-center justify-between mb-10 md:mb-16 gap-6">
+              <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-purple-400 to-indigo-500 drop-shadow-md">
+                Featured Projects
+              </h2>
+              <a 
+                href="https://github.com/AdarshPathak9628/" target="_blank" rel="noopener noreferrer"
+                className="px-6 py-3 bg-gray-900 hover:bg-gray-800 border border-gray-700 rounded-full transition-all font-bold text-sm flex items-center gap-2 pointer-events-auto shadow-lg hover:shadow-xl text-white"
+              >
+                <Github className="w-4 h-4" /> View All on GitHub
+              </a>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 { title: "Cart Management System", tech: "Django, MySQL, Bootstrap", desc: "A robust e-commerce cart backend handling complex relational data mapping and optimized ORM queries." },

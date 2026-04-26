@@ -22,81 +22,79 @@ const MapOfIndia = () => {
       {/* Grid Helper for Cyberpunk Vibe */}
       <gridHelper args={[100, 100, "#112233", "#050505"]} position={[0, -1.9, 0]} />
       
-      {/* Zone 1: North (Mountains) */}
+      {/* Zone 1: Cloud Node Alpha (Global Architecture) */}
       <group position={[0, 0, -20]}>
-        <mesh position={[-2, 2, -2]} castShadow receiveShadow>
-          <coneGeometry args={[3, 8, 4]} />
-          <meshPhysicalMaterial color="#ffffff" metalness={0.7} roughness={0.2} emissive="#4488ff" emissiveIntensity={0.2} clearcoat={1} />
+        {/* Core Node */}
+        <mesh position={[-2, 3, -2]} castShadow receiveShadow>
+          <icosahedronGeometry args={[3, 1]} />
+          <meshPhysicalMaterial color="#ffffff" metalness={0.9} roughness={0.1} emissive="#00bfff" emissiveIntensity={0.2} clearcoat={1} wireframe={true} />
         </mesh>
-        <mesh position={[2, 3, 0]} castShadow receiveShadow>
-          <coneGeometry args={[4, 10, 4]} />
-          <meshPhysicalMaterial color="#dddddd" metalness={0.6} roughness={0.3} emissive="#4488ff" emissiveIntensity={0.1} clearcoat={1} />
+        <mesh position={[-2, 3, -2]}>
+          <icosahedronGeometry args={[2.5, 2]} />
+          <meshPhysicalMaterial color="#0a0a0a" metalness={0.8} roughness={0.5} />
         </mesh>
         {/* Floating Profile Image */}
         <Html position={[0, 6, 2]} center>
-          <div className="flex flex-col items-center bg-white/5 p-4 sm:p-6 rounded-2xl border border-white/20 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] pointer-events-auto transform scale-75 sm:scale-100 origin-center transition-transform">
-            <img src={profileImg.src} alt="Profile" className="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.5)]" />
-            <p className="text-white mt-3 sm:mt-4 font-bold text-xl sm:text-2xl drop-shadow-md">Adarsh Pathak</p>
+          <div className="flex flex-col items-center bg-black/40 p-4 sm:p-6 rounded-2xl border border-cyan-500/30 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,255,255,0.15)] pointer-events-auto transform scale-75 sm:scale-100 origin-center transition-transform">
+            <img src={profileImg.src} alt="Profile" className="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-cyan-400 shadow-[0_0_20px_rgba(0,255,255,0.4)]" />
+            <p className="text-white mt-3 sm:mt-4 font-bold text-xl sm:text-2xl tracking-wide">Adarsh Pathak</p>
+            <p className="text-cyan-400 text-sm font-medium tracking-widest uppercase mt-1">DevOps Engineer</p>
           </div>
         </Html>
       </group>
       
-      {/* Zone 2: Delhi (India Gate) */}
+      {/* Zone 2: Data Pipeline Beta (Integration & Flow) */}
       <group position={[-5, 0, -5]}>
-        {/* India Gate Abstract */}
+        {/* Server Rack Representation */}
         <mesh position={[0, 3, 0]} castShadow receiveShadow>
-          <boxGeometry args={[4, 6, 2]} />
-          <meshPhysicalMaterial color="#2d3436" metalness={0.8} roughness={0.2} emissive="#00ff88" emissiveIntensity={0.15} clearcoat={0.8} />
+          <boxGeometry args={[3, 6, 1.5]} />
+          <meshPhysicalMaterial color="#1a1a1a" metalness={0.7} roughness={0.3} emissive="#00e5ff" emissiveIntensity={0.15} clearcoat={0.5} />
         </mesh>
         <mesh position={[0, 1.5, 0]}>
-          <boxGeometry args={[2, 4, 2.1]} />
-          <meshPhysicalMaterial color="#000000" metalness={1} roughness={0} /> {/* Cutout effect */}
+          <boxGeometry args={[2.8, 0.2, 1.6]} />
+          <meshPhysicalMaterial color="#000000" metalness={1} roughness={0} emissive="#00e5ff" emissiveIntensity={0.8} />
+        </mesh>
+        <mesh position={[0, 3.5, 0]}>
+          <boxGeometry args={[2.8, 0.2, 1.6]} />
+          <meshPhysicalMaterial color="#000000" metalness={1} roughness={0} emissive="#00e5ff" emissiveIntensity={0.8} />
         </mesh>
       </group>
       
-      {/* Zone 3: Kings of UP Hub (Ram Mandir, Purana Qila, Maha Kumbh) */}
+      {/* Zone 3: Server Cluster Gamma (Scalability & DevOps) */}
       <group position={[2, 0, 5]}>
-        {/* Ram Mandir Abstract (Majestic Scale) */}
+        {/* Main Cluster Node */}
         <mesh position={[0, 3, 0]} castShadow receiveShadow>
-          <boxGeometry args={[8, 6, 8]} />
-          <meshPhysicalMaterial color="#4a3000" metalness={0.9} roughness={0.1} emissive="#ffaa00" emissiveIntensity={0.4} clearcoat={1} />
+          <cylinderGeometry args={[2.5, 2.5, 5, 32]} />
+          <meshPhysicalMaterial color="#111111" metalness={0.9} roughness={0.1} emissive="#0066ff" emissiveIntensity={0.3} clearcoat={1} />
         </mesh>
-        <mesh position={[0, 7.5, 0]} castShadow receiveShadow>
-          <coneGeometry args={[4, 9, 4]} />
-          <meshPhysicalMaterial color="#5a2000" metalness={0.8} roughness={0.2} emissive="#ff5500" emissiveIntensity={0.6} clearcoat={1} />
+        {/* Orbiting Satellite/Node */}
+        <mesh position={[4, 5, -2]} castShadow receiveShadow>
+          <sphereGeometry args={[1, 32, 32]} />
+          <meshPhysicalMaterial color="#2d3436" metalness={0.9} roughness={0.2} emissive="#00ffff" emissiveIntensity={0.4} clearcoat={0.8} />
         </mesh>
-        {/* Purana Qila Abstract (Moved to UP Hub, Majestic Scale) */}
-        <mesh position={[7, 3, -4]} castShadow receiveShadow>
-          <cylinderGeometry args={[2.5, 2.5, 6, 8]} />
-          <meshPhysicalMaterial color="#2d3436" metalness={0.9} roughness={0.2} emissive="#ff3300" emissiveIntensity={0.3} clearcoat={0.8} />
-        </mesh>
-        <mesh position={[7, 7, -4]} castShadow receiveShadow>
-          <coneGeometry args={[3, 4, 8]} />
-          <meshPhysicalMaterial color="#1a1a1a" metalness={0.8} roughness={0.3} emissive="#ff3300" emissiveIntensity={0.2} />
-        </mesh>
-        {/* Floating Certificate (Kept as placeholder or removed since we have a modal now) */}
-        <Html position={[0, 10, 4]} center>
-          <div className="bg-white/5 p-3 sm:p-4 rounded-3xl border border-orange-500/50 backdrop-blur-xl shadow-[0_0_50px_rgba(255,165,0,0.3)] pointer-events-auto w-64 sm:w-72 transform scale-75 sm:scale-100 hover:scale-105 sm:hover:scale-105 transition-transform duration-300 origin-center text-center">
-            <h3 className="text-orange-400 font-black text-xl sm:text-2xl drop-shadow-md uppercase tracking-widest">Kings of UP</h3>
-            <p className="text-white mt-1 text-sm font-bold opacity-80">The Majestic Hub</p>
+        {/* Floating Tag */}
+        <Html position={[0, 7, 2]} center>
+          <div className="bg-black/40 p-3 sm:p-4 rounded-xl border border-blue-500/30 backdrop-blur-md shadow-[0_0_30px_rgba(0,102,255,0.2)] pointer-events-auto w-64 transform transition-transform duration-300 origin-center text-center">
+            <h3 className="text-blue-400 font-bold text-lg sm:text-xl drop-shadow-md tracking-wider">Cluster Gamma</h3>
+            <p className="text-white/80 mt-1 text-xs font-medium uppercase tracking-widest">Scalability Node</p>
           </div>
         </Html>
       </group>
       
-      {/* Zone 4: East (Howrah Bridge) */}
+      {/* Zone 4: Terminal Hub Delta */}
       <group position={[15, 0, 10]}>
-        {/* Howrah Bridge Abstract */}
+        {/* Abstract Microservices Nodes */}
         <mesh position={[-3, 4, 0]} castShadow receiveShadow>
           <boxGeometry args={[1, 8, 2]} />
-          <meshPhysicalMaterial color="#1a252c" metalness={0.9} roughness={0.1} emissive="#0088ff" emissiveIntensity={0.1} clearcoat={1} />
+          <meshPhysicalMaterial color="#0a0f14" metalness={0.9} roughness={0.1} emissive="#00ffff" emissiveIntensity={0.2} clearcoat={1} />
         </mesh>
         <mesh position={[3, 4, 0]} castShadow receiveShadow>
           <boxGeometry args={[1, 8, 2]} />
-          <meshPhysicalMaterial color="#1a252c" metalness={0.9} roughness={0.1} emissive="#0088ff" emissiveIntensity={0.1} clearcoat={1} />
+          <meshPhysicalMaterial color="#0a0f14" metalness={0.9} roughness={0.1} emissive="#00ffff" emissiveIntensity={0.2} clearcoat={1} />
         </mesh>
         <mesh position={[0, 6, 0]} rotation={[0, 0, Math.PI / 2]} castShadow receiveShadow>
-          <boxGeometry args={[1, 6, 0.5]} />
-          <meshPhysicalMaterial color="#2a354c" metalness={0.8} roughness={0.2} emissive="#0055ff" emissiveIntensity={0.2} />
+          <cylinderGeometry args={[0.5, 0.5, 6, 16]} />
+          <meshPhysicalMaterial color="#ffffff" metalness={1} roughness={0.2} emissive="#0066ff" emissiveIntensity={0.5} />
         </mesh>
       </group>
     </group>
@@ -133,12 +131,12 @@ const CameraAndLighting = () => {
       { x: 15, y: 10, z: 20 },  // East
     ];
 
-    // Cinematic Environmental Colors
+    // Cinematic Environmental Colors (Corporate/Tech Vibe)
     const colors = [
-      new THREE.Color("#020617"), // North (Deep slate blue)
-      new THREE.Color("#021a11"), // Delhi (Dark emerald green)
-      new THREE.Color("#1f0d00"), // UP Hub (Deep molten orange)
-      new THREE.Color("#081220"), // East (Deep navy twilight)
+      new THREE.Color("#020617"), // Node Alpha (Deep slate blue)
+      new THREE.Color("#010a14"), // Pipeline Beta (Dark cyan-blue)
+      new THREE.Color("#00081a"), // Cluster Gamma (Deepest navy)
+      new THREE.Color("#050510"), // Terminal Delta (Void black-blue)
     ];
 
     // Initialize point light on camera
