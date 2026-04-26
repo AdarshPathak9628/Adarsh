@@ -98,8 +98,8 @@ const SceneContent = () => {
         <Html position={[0, 6, 2]} center zIndexRange={[100, 0]}>
           <div className="group flex flex-col items-center bg-white/5 p-6 sm:p-8 rounded-[2.5rem] border border-white/10 backdrop-blur-2xl shadow-[0_0_20px_rgba(0,150,200,0.08)] hover:shadow-[0_0_40px_rgba(0,200,255,0.2)] hover:border-cyan-500/30 pointer-events-auto transform scale-75 sm:scale-100 origin-center transition-all duration-500">
             <div className="relative rounded-full p-[3px] bg-gradient-to-br from-cyan-500 via-blue-600 to-indigo-600 shadow-[0_0_15px_rgba(0,150,200,0.2)] group-hover:shadow-[0_0_30px_rgba(0,200,255,0.4)] transition-shadow duration-500">
-              <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden bg-black">
-                <img src={profileImg.src} alt="Adarsh Pathak" className="w-full h-full rounded-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden bg-black">
+                <img src={profileImg.src} alt="Adarsh Pathak" className="w-full h-full rounded-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
               </div>
             </div>
             <p className="text-white mt-5 sm:mt-6 font-black text-2xl sm:text-3xl tracking-wide group-hover:text-cyan-200 transition-colors">Adarsh Pathak</p>

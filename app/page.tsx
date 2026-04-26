@@ -207,13 +207,27 @@ export default function Portfolio() {
             </div>
           </div>
 
-          <div className="p-8 md:p-12 bg-white/5 backdrop-blur-2xl rounded-[3rem] border border-cyan-400/30 shadow-[0_8px_32px_0_rgba(0,255,255,0.1)] w-full max-w-md text-center mx-4 mt-6 xl:mt-0">
-            <h2 className="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-500 mb-8 drop-shadow-md">Arsenal</h2>
-            <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-              {['Python', 'Django', 'Docker', 'Linux', 'AWS / Cloud', 'React', 'MySQL', 'CI/CD'].map(skill => (
-                <span key={skill} className="px-5 py-2.5 bg-black/40 border border-white/20 hover:border-cyan-400/50 hover:bg-cyan-500/10 rounded-full text-sm md:text-base font-bold transition-colors">
-                  {skill}
-                </span>
+          <div className="p-8 md:p-12 bg-white/5 backdrop-blur-2xl rounded-[3rem] border border-cyan-400/30 shadow-[0_8px_32px_0_rgba(0,255,255,0.1)] w-full max-w-lg text-left mx-4 mt-6 xl:mt-0">
+            <h2 className="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-500 mb-8 drop-shadow-md text-center">Technical Arsenal</h2>
+            <div className="space-y-6">
+              {[
+                { category: "Languages", items: "Python, C, C++, JavaScript, Java" },
+                { category: "Backend", items: "Django, Django REST Framework, REST APIs, API Integration" },
+                { category: "Frontend", items: "HTML5, CSS3, Bootstrap, Tailwind CSS" },
+                { category: "Databases", items: "MySQL, MariaDB, SQLite3, Relational DB Design" },
+                { category: "Libraries & Tools", items: "NumPy, Pandas, Matplotlib, Git, GitHub" },
+                { category: "Core Concepts", items: "OOPs, MVC Architecture, Auth & Authorization, DSA" },
+              ].map(group => (
+                <div key={group.category}>
+                  <h3 className="text-cyan-400 text-xs font-bold tracking-widest uppercase mb-2">{group.category}</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {group.items.split(', ').map(skill => (
+                      <span key={skill} className="px-3 py-1.5 bg-black/40 border border-white/15 hover:border-cyan-400/50 hover:bg-cyan-500/10 rounded-full text-xs md:text-sm font-semibold transition-colors text-gray-200">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </div>
