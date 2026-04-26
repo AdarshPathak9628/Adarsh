@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Scene from "@/components/Scene";
 import CertificatesModal from "@/components/CertificatesModal";
 import Lenis from "lenis";
-import { Phone, Mail, Linkedin, Instagram, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Phone, Mail, Linkedin, Instagram, ArrowRight, CheckCircle2, Award } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
