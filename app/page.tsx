@@ -51,6 +51,20 @@ export default function Portfolio() {
       {/* Scrollable Overlay Content */}
       <div className="relative z-10 w-full scroll-container">
         
+        {/* Sticky Premium Navbar */}
+        <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 md:px-12 bg-black/20 backdrop-blur-md border-b border-white/10 pointer-events-auto transition-all">
+          <div className="text-xl md:text-2xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+            AP<span className="text-white">.</span>
+          </div>
+          <a 
+            href="/Resume.pdf" 
+            download 
+            className="px-6 py-2 md:px-8 md:py-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 hover:from-cyan-500/40 hover:to-blue-500/40 border border-cyan-500/50 rounded-full transition-all font-bold text-sm md:text-base flex items-center gap-2 text-white shadow-[0_0_15px_rgba(0,255,255,0.2)] hover:shadow-[0_0_30px_rgba(0,255,255,0.5)] group"
+          >
+            Download CV <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
+        </nav>
+
         {/* Zone 1: North (Hero) */}
         <section className="min-h-screen w-full flex items-center justify-center pointer-events-none px-4 py-20 relative">
           <motion.div 
@@ -84,6 +98,13 @@ export default function Portfolio() {
               >
                 View Credentials
               </button>
+              <a 
+                href="/Resume.pdf" 
+                download 
+                className="px-8 md:px-10 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white rounded-full transition-all font-bold text-sm md:text-lg shadow-[0_0_20px_rgba(0,255,255,0.3)] hover:shadow-[0_0_40px_rgba(0,255,255,0.6)] flex items-center gap-2 w-full md:w-auto justify-center"
+              >
+                Download CV
+              </a>
             </div>
           </motion.div>
         </section>
@@ -225,12 +246,19 @@ export default function Portfolio() {
                 { title: "MultiShop E-Commerce", tech: "Django, MySQL, JS", desc: "Full-stack scalable digital storefront with secure checkout, product management, and dynamic UI rendering." },
                 { title: "Hospital Management", tech: "Python, MySQL", desc: "A comprehensive terminal-to-database architecture for secure patient record management and appointment scheduling." }
               ].map(proj => (
-                <div key={proj.title} className="bg-black/40 p-8 rounded-[2rem] border border-white/10 hover:border-purple-500/50 hover:-translate-y-2 transition-all duration-300 pointer-events-auto cursor-pointer group shadow-xl">
+                <div key={proj.title} className="bg-black/40 p-8 rounded-[2rem] border border-white/10 hover:border-purple-500/50 hover:-translate-y-2 transition-all duration-300 pointer-events-auto flex flex-col group shadow-xl">
                   <h3 className="text-2xl font-bold text-white group-hover:text-purple-300 transition-colors mb-4">{proj.title}</h3>
-                  <div className="inline-block px-4 py-1.5 bg-purple-500/20 text-purple-200 rounded-full text-xs font-bold mb-6">
+                  <div className="inline-block px-4 py-1.5 bg-purple-500/20 text-purple-200 rounded-full text-xs font-bold mb-6 self-start">
                     {proj.tech}
                   </div>
-                  <p className="text-gray-400 text-sm md:text-base leading-relaxed font-medium">{proj.desc}</p>
+                  <p className="text-gray-400 text-sm md:text-base leading-relaxed font-medium flex-grow mb-8">{proj.desc}</p>
+                  
+                  <a 
+                    href="https://github.com/AdarshPathak9628/" target="_blank" rel="noopener noreferrer"
+                    className="w-full py-3 bg-white/5 hover:bg-purple-500/20 border border-white/10 hover:border-purple-500/50 rounded-xl transition-all font-bold text-sm flex items-center justify-center gap-2 text-white group-hover:shadow-[0_0_20px_rgba(128,0,128,0.3)] mt-auto"
+                  >
+                    <Github className="w-4 h-4" /> View Source Code
+                  </a>
                 </div>
               ))}
             </div>
