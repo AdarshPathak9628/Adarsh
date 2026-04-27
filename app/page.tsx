@@ -160,17 +160,13 @@ export default function Portfolio() {
               <div className="flex flex-col md:flex-row gap-6 md:gap-8">
                 <div className="bg-black/30 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-cyan-400/50 transition-colors pointer-events-auto flex-1">
                   <h3 className="text-xl md:text-2xl font-bold text-white mb-1">12th Grade (Intermediate)</h3>
-                  <a href="https://saicpratapgarh.org/" target="_blank" rel="noopener noreferrer" className="text-lg text-cyan-300 font-medium hover:underline inline-flex items-center gap-1">
-                    St. Anthony's Inter College <ArrowRight className="w-3 h-3" />
-                  </a>
-                  <p className="mt-3 text-2xl font-black text-white">69.00%</p>
+                  <p className="text-lg text-cyan-300 font-medium">St. Anthony&apos;s Inter College, Pratapgarh</p>
+                  <p className="mt-3 text-sm text-gray-400 font-medium">2019 – 2020</p>
                 </div>
                 <div className="bg-black/30 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-cyan-400/50 transition-colors pointer-events-auto flex-1">
                   <h3 className="text-xl md:text-2xl font-bold text-white mb-1">10th Grade (High School)</h3>
-                  <a href="https://saicpratapgarh.org/" target="_blank" rel="noopener noreferrer" className="text-lg text-cyan-300 font-medium hover:underline inline-flex items-center gap-1">
-                    St. Anthony's Inter College <ArrowRight className="w-3 h-3" />
-                  </a>
-                  <p className="mt-3 text-2xl font-black text-white">82.83%</p>
+                  <p className="text-lg text-cyan-300 font-medium">St. Anthony&apos;s Inter College, Pratapgarh</p>
+                  <p className="mt-3 text-sm text-gray-400 font-medium">2017 – 2018</p>
                 </div>
               </div>
             </div>
@@ -195,14 +191,30 @@ export default function Portfolio() {
             </h2>
             <div className="space-y-6 md:space-y-8 relative">
               <div className="bg-black/40 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-blue-500/50 transition-colors">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Django Backend Developer (Intern)</h3>
-                <p className="text-lg md:text-xl text-cyan-300 font-medium">TECHQRT</p>
-                <p className="text-gray-400 mt-4 font-medium">Architected scalable database structures and optimized RESTful APIs.</p>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">Django Backend Developer (Intern)</h3>
+                  <span className="text-sm text-gray-400 font-medium whitespace-nowrap">Aug 2024 – Oct 2024</span>
+                </div>
+                <p className="text-lg md:text-xl text-cyan-300 font-medium">TECHQRT — Lucknow</p>
+                <ul className="text-gray-400 mt-4 font-medium space-y-2 text-sm md:text-base list-disc list-inside">
+                  <li>Engineered backend components using Django and Django REST Framework to support authentication, product management, and order processing.</li>
+                  <li>Structured relational schemas through Django ORM, ensuring reliable data relationships and efficient retrieval.</li>
+                  <li>Implemented RESTful endpoints enabling secure CRUD operations across user accounts, product inventory, and transaction records.</li>
+                  <li>Collaborated with development teams to debug issues, enhance application features, and improve system performance.</li>
+                </ul>
               </div>
               <div className="bg-black/40 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-blue-500/50 transition-colors">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Python Web Trainee</h3>
-                <p className="text-lg md:text-xl text-cyan-300 font-medium">ARUDAN TECHNOLOGIES PVT. LTD.</p>
-                <p className="text-gray-400 mt-4 font-medium">Developed core Python fundamentals and web integration capabilities.</p>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">Python Web Development Trainee</h3>
+                  <span className="text-sm text-gray-400 font-medium whitespace-nowrap">Apr 2024 – Jul 2024</span>
+                </div>
+                <p className="text-lg md:text-xl text-cyan-300 font-medium">Arudan Technologies Pvt. Ltd. — Prayagraj</p>
+                <ul className="text-gray-400 mt-4 font-medium space-y-2 text-sm md:text-base list-disc list-inside">
+                  <li>Acquired hands-on exposure to Python, Django, MySQL, HTML, CSS, and Bootstrap within a full-stack training program.</li>
+                  <li>Assembled database-driven web modules utilizing Django ORM and relational database principles.</li>
+                  <li>Refined database queries and backend logic to enhance application responsiveness.</li>
+                  <li>Integrated authentication workflows, session handling, and form validation for secure user interaction.</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -247,18 +259,32 @@ export default function Portfolio() {
                 <Github className="w-4 h-4" /> View All on GitHub
               </a>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
-                { title: "Cart Management System", tech: "Django, MySQL, Bootstrap", desc: "An enterprise-grade e-commerce cart backend featuring complex relational data mapping, optimized Django ORM queries, session-based cart persistence, and a responsive Bootstrap frontend for seamless product browsing and order processing." },
-                { title: "MultiShop E-Commerce", tech: "Django, MySQL, JavaScript", desc: "A full-stack scalable digital storefront with user authentication, dynamic product catalog management, secure checkout workflows, inventory tracking, and an admin dashboard—all powered by Django REST APIs and a MySQL relational database." },
-                { title: "Hospital Management System", tech: "Python, MySQL", desc: "A comprehensive healthcare management platform handling patient registration, doctor assignment, OPD appointment scheduling, role-based access control for staff and administrators, and automated report generation with secure MySQL-backed data persistence." }
+                { title: "MultiShop E-Commerce Platform", tech: "Django, MySQL, Bootstrap", period: "Mar 2024 – Jun 2024", bullets: [
+                  "Architected a dynamic online retail platform featuring authentication, product catalog management, cart functionality, and order tracking.",
+                  "Modeled normalized relational tables including Product, Category, Cart, and Order entities.",
+                  "Introduced search capability, category-based filtering, and real-time cart updates improving user interaction.",
+                  "Handled version control using Git and GitHub ensuring organized codebase management and collaboration readiness."
+                ]},
+                { title: "Hospital Management System", tech: "Python, MySQL", period: "Jan 2024 – Feb 2024", bullets: [
+                  "Constructed a healthcare management solution supporting patient registration, appointment scheduling, and billing operations.",
+                  "Established role-based access control ensuring protected medical records and restricted administrative access.",
+                  "Organized database structures handling patient details, appointment records, and physician schedules.",
+                  "Automated OPD workflows covering patient intake through invoice generation."
+                ]}
               ].map(proj => (
                 <div key={proj.title} className="bg-black/40 p-8 rounded-[2rem] border border-white/10 hover:border-purple-500/50 hover:-translate-y-2 transition-all duration-300 pointer-events-auto flex flex-col group shadow-xl">
-                  <h3 className="text-2xl font-bold text-white group-hover:text-purple-300 transition-colors mb-4">{proj.title}</h3>
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+                    <h3 className="text-2xl font-bold text-white group-hover:text-purple-300 transition-colors">{proj.title}</h3>
+                    <span className="text-xs text-gray-400 font-medium whitespace-nowrap">{proj.period}</span>
+                  </div>
                   <div className="inline-block px-4 py-1.5 bg-purple-500/20 text-purple-200 rounded-full text-xs font-bold mb-6 self-start">
                     {proj.tech}
                   </div>
-                  <p className="text-gray-400 text-sm md:text-base leading-relaxed font-medium flex-grow mb-8">{proj.desc}</p>
+                  <ul className="text-gray-400 text-sm md:text-base leading-relaxed font-medium flex-grow mb-8 space-y-2 list-disc list-inside">
+                    {proj.bullets.map((b, i) => <li key={i}>{b}</li>)}
+                  </ul>
                   
                   <a 
                     href="https://github.com/AdarshPathak9628/" target="_blank" rel="noopener noreferrer"
