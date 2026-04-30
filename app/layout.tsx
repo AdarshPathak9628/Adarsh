@@ -5,6 +5,8 @@ import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
 
+import { ThemeProvider } from "@/components/theme-provider"
+
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 export const metadata: Metadata = {
@@ -34,10 +36,17 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={`font-sans ${inter.variable} antialiased`}>
-        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
-        <Analytics />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   )

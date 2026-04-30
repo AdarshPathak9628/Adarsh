@@ -5,10 +5,10 @@
 
 :root {
   /* Updated color tokens to match emerald-based professional portfolio design */
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.278 0 0);
-  --card: oklch(0.976 0 0);
-  --card-foreground: oklch(0.345 0 0);
+  --background: #f8fafc; /* slate-50 */
+  --foreground: #0f172a; /* slate-950 */
+  --card: #ffffff;
+  --card-foreground: #0f172a;
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.278 0 0);
   --primary: oklch(0.459 0.136 166.014);
@@ -41,10 +41,10 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
+  --background: #09090b; /* zinc-950 */
+  --foreground: #f8fafc; /* slate-50 */
+  --card: #18181b; /* zinc-900 with some transparency handled in component */
+  --card-foreground: #f8fafc;
   --popover: oklch(0.145 0 0);
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.569 0.148 166.014);
@@ -121,10 +121,11 @@
     @apply border-border outline-ring/50;
   }
   html, body {
-    @apply bg-black text-foreground overflow-x-hidden;
+    @apply bg-background text-foreground overflow-x-hidden;
     width: 100%;
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 

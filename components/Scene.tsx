@@ -1,10 +1,11 @@
 "use client";
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
 import { PerspectiveCamera, Html } from "@react-three/drei";
-import { useRef, useEffect, useMemo } from "react";
+import { useRef, useEffect, useMemo, useState } from "react";
 import * as THREE from "three";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTheme } from "next-themes";
 import profileImg from "../src/assets/images/My profile image.png";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -172,10 +173,13 @@ const CameraAndLighting = () => {
   const pointLightRef = useRef<THREE.PointLight>(null);
   const { scene } = useThree();
 
+  const { theme } = useTheme();
+  
   useEffect(() => {
-    const initialBgColor = new THREE.Color("#020617");
+    const isDark = theme === "dark";
+    const initialBgColor = new THREE.Color(isDark ? "#020617" : "#f8fafc");
     scene.background = initialBgColor;
-    scene.fog = new THREE.FogExp2(initialBgColor, 0.012);
+    scene.fog = new THREE.FogExp2(initialBgColor, isDark ? 0.012 : 0.008);
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -193,11 +197,16 @@ const CameraAndLighting = () => {
       { x: 15, y: 10, z: 20 },
     ];
 
-    const colors = [
+    const colors = isDark ? [
       new THREE.Color("#020617"),
       new THREE.Color("#010a14"),
       new THREE.Color("#00081a"),
       new THREE.Color("#040510"),
+    ] : [
+      new THREE.Color("#f8fafc"),
+      new THREE.Color("#f1f5f9"),
+      new THREE.Color("#e2e8f0"),
+      new THREE.Color("#f8fafc"),
     ];
 
     if (pointLightRef.current) {
@@ -208,15 +217,13 @@ const CameraAndLighting = () => {
       tl.to(cameraRef.current!.position, { x: point.x, y: point.y, z: point.z, ease: "power2.inOut" }, index * 2);
       tl.to(pointLightRef.current!.position, { x: point.x, y: point.y + 2, z: point.z, ease: "power2.inOut" }, index * 2);
 
-      if (index > 0) {
-        tl.to(scene.background, { r: colors[index].r, g: colors[index].g, b: colors[index].b, ease: "none" }, (index - 0.5) * 2);
-        tl.to((scene.fog as THREE.FogExp2).color, { r: colors[index].r, g: colors[index].g, b: colors[index].b, ease: "none" }, (index - 0.5) * 2);
-        tl.to(ambientLightRef.current!.color, { r: colors[index].r, g: colors[index].g, b: colors[index].b, ease: "none" }, (index - 0.5) * 2);
-      }
+      tl.to(scene.background, { r: colors[index].r, g: colors[index].g, b: colors[index].b, ease: "none" }, index * 2);
+      tl.to((scene.fog as THREE.FogExp2).color, { r: colors[index].r, g: colors[index].g, b: colors[index].b, ease: "none" }, index * 2);
+      tl.to(ambientLightRef.current!.color, { r: colors[index].r, g: colors[index].g, b: colors[index].b, ease: "none" }, index * 2);
     });
 
     return () => { tl.kill(); };
-  }, [scene]);
+  }, [scene, theme]);
 
   return (
     <>
@@ -238,7 +245,7 @@ const CameraAndLighting = () => {
 
 export default function Scene() {
   return (
-    <div className="fixed top-0 left-0 w-full h-screen z-0 bg-black">
+    <div className="fixed top-0 left-0 w-full h-screen z-0 bg-background transition-colors duration-300">
       <Canvas shadows gl={{ antialias: true, toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1 }}>
         <CameraAndLighting />
         <SceneContent />

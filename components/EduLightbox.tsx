@@ -47,7 +47,7 @@ export default function EduLightbox({ isOpen, onClose, images, title }: EduLight
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4 }}
-          className="fixed inset-0 z-[9999] flex flex-col items-center justify-between bg-black/98 backdrop-blur-3xl overflow-hidden"
+          className="fixed inset-0 z-[9999] flex flex-col items-center justify-between bg-background/98 backdrop-blur-3xl overflow-hidden"
           onClick={(e) => {
             if (e.target === e.currentTarget) onClose();
           }}
@@ -59,7 +59,7 @@ export default function EduLightbox({ isOpen, onClose, images, title }: EduLight
               e.stopPropagation();
               onClose();
             }}
-            className="fixed top-6 right-6 md:top-8 md:right-8 p-3 md:p-4 bg-white/5 hover:bg-white/15 rounded-full backdrop-blur-xl transition-all text-white border border-white/10 z-[350] group"
+            className="fixed top-6 right-6 md:top-8 md:right-8 p-3 md:p-4 bg-card hover:bg-accent rounded-full backdrop-blur-xl transition-all text-foreground border border-border z-[350] group"
           >
             <X className="w-6 h-6 md:w-8 md:h-8 group-hover:rotate-90 transition-transform duration-300" />
           </button>
@@ -70,7 +70,7 @@ export default function EduLightbox({ isOpen, onClose, images, title }: EduLight
             onClick={(e) => e.stopPropagation()}
           >
             <p className="text-cyan-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-2">Academic Record</p>
-            <h3 className="text-2xl md:text-5xl font-black text-white leading-tight px-4">{title}</h3>
+            <h3 className="text-2xl md:text-5xl font-black text-foreground leading-tight px-4">{title}</h3>
           </div>
 
           {/* Image Area (65% Height) with Navigation */}
@@ -82,15 +82,15 @@ export default function EduLightbox({ isOpen, onClose, images, title }: EduLight
               <>
                 <button 
                   onClick={prevSlide}
-                  className="absolute left-4 md:left-8 z-10 p-3 md:p-5 bg-white/5 hover:bg-white/15 rounded-full border border-white/10 transition-all opacity-0 group-hover:opacity-100 hover:scale-110"
+                  className="absolute left-4 md:left-8 z-10 p-3 md:p-5 bg-card hover:bg-accent rounded-full border border-border transition-all opacity-0 group-hover:opacity-100 hover:scale-110"
                 >
-                  <ChevronLeft className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                  <ChevronLeft className="w-6 h-6 md:w-8 md:h-8 text-foreground" />
                 </button>
                 <button 
                   onClick={nextSlide}
-                  className="absolute right-4 md:right-8 z-10 p-3 md:p-5 bg-white/5 hover:bg-white/15 rounded-full border border-white/10 transition-all opacity-0 group-hover:opacity-100 hover:scale-110"
+                  className="absolute right-4 md:right-8 z-10 p-3 md:p-5 bg-card hover:bg-accent rounded-full border border-border transition-all opacity-0 group-hover:opacity-100 hover:scale-110"
                 >
-                  <ChevronRight className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                  <ChevronRight className="w-6 h-6 md:w-8 md:h-8 text-foreground" />
                 </button>
               </>
             )}
@@ -127,7 +127,7 @@ export default function EduLightbox({ isOpen, onClose, images, title }: EduLight
                 key={currentIndex}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="px-6 md:px-10 py-4 md:py-5 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-md max-w-4xl"
+                className="px-6 md:px-10 py-4 md:py-5 bg-card border border-border rounded-2xl backdrop-blur-md max-w-4xl"
               >
                 <p className="text-cyan-300 text-xs md:text-base font-bold italic tracking-wide flex items-center justify-center gap-3 md:gap-4 text-center leading-relaxed">
                   <Info className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" /> {images[currentIndex].caption}

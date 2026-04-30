@@ -236,14 +236,14 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4 }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/98 backdrop-blur-3xl overflow-hidden"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-background/98 backdrop-blur-3xl overflow-hidden"
           onClick={(e) => {
             if (e.target === e.currentTarget) onClose();
           }}
         >
           <button
             onClick={activeAlbum ? () => setActiveAlbum(null) : onClose}
-            className="fixed top-8 right-8 p-4 bg-white/5 hover:bg-white/15 rounded-full backdrop-blur-xl transition-all text-white border border-white/10 z-[200] group"
+            className="fixed top-8 right-8 p-4 bg-card hover:bg-accent rounded-full backdrop-blur-xl transition-all text-foreground border border-border z-[200] group"
           >
             <X className="w-8 h-8 group-hover:rotate-90 transition-transform duration-300" />
           </button>
@@ -355,16 +355,16 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="inline-flex items-center gap-3 px-6 py-2 bg-white/5 border border-white/10 rounded-full mb-8"
+                  className="inline-flex items-center gap-3 px-6 py-2 bg-card border border-border rounded-full mb-8"
                 >
                   <LayoutGrid className="w-4 h-4 text-cyan-400" />
-                  <span className="text-xs font-bold text-white uppercase tracking-[0.3em]">Verified Engineering Portfolio</span>
+                  <span className="text-xs font-bold text-foreground uppercase tracking-[0.3em]">Verified Engineering Portfolio</span>
                 </motion.div>
-                <h2 className="text-5xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40 mb-8 tracking-tighter">
-                  CERTIFICATES
+                <h2 className="text-4xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-6 drop-shadow-2xl">
+                  Credentials Library
                 </h2>
-                <p className="text-gray-300 text-xl font-medium max-w-2xl mx-auto leading-relaxed">
-                  Explore curated collections of professional certifications and competitive technical milestones.
+                <p className="text-muted-foreground text-lg md:text-2xl font-medium tracking-wide">
+                  Advanced Certifications & Technical Recognitions
                 </p>
               </div>
 
@@ -381,7 +381,7 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                     }}
                     className="group relative cursor-pointer"
                   >
-                    <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-white/10 bg-white/5 transition-all duration-500 group-hover:border-cyan-400/50 group-hover:shadow-[0_0_50px_rgba(0,255,255,0.15)]">
+                    <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-border bg-card transition-all duration-500 group-hover:border-cyan-400/50 group-hover:shadow-[0_0_50px_rgba(0,255,255,0.15)]">
                       <Image
                         src={group.coverImage}
                         alt={group.title}
@@ -390,26 +390,23 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                         onContextMenu={(e) => e.preventDefault()}
                         onDragStart={(e) => e.preventDefault()}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
 
-                      <div className="absolute top-6 right-6 px-4 py-2 bg-black/60 backdrop-blur-md rounded-2xl border border-white/10 text-[10px] font-black text-white uppercase tracking-widest z-10 whitespace-nowrap">
+                      <div className="absolute top-6 right-6 px-4 py-2 bg-background/60 backdrop-blur-md rounded-2xl border border-border text-[10px] font-black text-foreground uppercase tracking-widest z-10 whitespace-nowrap">
                         {group.images.length} IMAGES
                       </div>
 
                       <div className="absolute inset-0 flex flex-col justify-end p-8">
-                        <div className="flex flex-wrap items-center gap-3 mb-2">
-                          <p className="text-cyan-400 font-bold uppercase tracking-widest text-[10px]">{group.category}</p>
-                          <span className="w-1 h-1 bg-white/30 rounded-full shrink-0" />
-                          <p className="text-gray-300 font-bold uppercase tracking-wider text-[10px]">{group.date}</p>
+                        <div className="p-6 md:p-8 bg-card/80 border-t border-border group-hover:bg-cyan-500/10 transition-colors">
+                          <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 group-hover:text-cyan-400 transition-colors">{group.title}</h3>
+                          <p className="text-muted-foreground text-xs md:text-sm font-bold tracking-widest uppercase mb-4">{group.category}</p>
+                          <div className="flex items-center justify-between text-xs font-bold text-muted-foreground">
+                            <span>{group.date}</span>
+                            <div className="flex items-center gap-1 text-cyan-400 group-hover:translate-x-1 transition-transform">
+                              VIEW <ChevronRight className="w-4 h-4" />
+                            </div>
+                          </div>
                         </div>
-                        <h4 className="text-2xl md:text-3xl font-black text-white group-hover:translate-x-2 transition-transform duration-500">{group.title}</h4>
-                      </div>
-                    </div>
-
-                    <div className="mt-6 px-4">
-                      <p className="text-gray-300 text-sm leading-relaxed line-clamp-2">{group.description}</p>
-                      <div className="mt-4 flex items-center gap-2 text-white/40 text-[10px] font-bold uppercase tracking-widest group-hover:text-cyan-400 transition-colors">
-                        Click to view album <ChevronRight className="w-3 h-3" />
                       </div>
                     </div>
                   </motion.div>
