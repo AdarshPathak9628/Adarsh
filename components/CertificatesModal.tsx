@@ -206,13 +206,21 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    if (isOpen && initialAlbumId) {
-      const album = certificateGroups.find(g => g.id === initialAlbumId);
-      if (album) {
-        setActiveAlbum(album);
-        setCurrentSlide(0);
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+      if (initialAlbumId) {
+        const album = certificateGroups.find(g => g.id === initialAlbumId);
+        if (album) {
+          setActiveAlbum(album);
+          setCurrentSlide(0);
+        }
       }
+    } else {
+      document.body.style.overflow = "unset";
     }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
   }, [isOpen, initialAlbumId]);
 
   const nextSlide = (e: React.MouseEvent) => {
@@ -327,8 +335,8 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                       animate={{ opacity: 1, y: 0 }}
                       className="px-10 py-5 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-md max-w-4xl"
                     >
-                      <p className="text-white dark:text-gray-200 text-sm md:text-base font-bold italic tracking-wide flex items-center justify-center gap-4 drop-shadow-md">
-                        <Info className="w-5 h-5 flex-shrink-0 text-cyan-400" /> {activeAlbum.images[currentSlide].caption}
+                      <p className="text-zinc-900 dark:text-gray-200 text-sm md:text-base font-bold italic tracking-wide flex items-center justify-center gap-4 drop-shadow-sm">
+                        <Info className="w-5 h-5 flex-shrink-0 text-cyan-500 dark:text-cyan-400" /> {activeAlbum.images[currentSlide].caption}
                       </p>
                     </motion.div>
                   </div>
@@ -360,7 +368,7 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                   <LayoutGrid className="w-4 h-4 text-cyan-400" />
                   <span className="text-xs font-bold text-foreground uppercase tracking-[0.3em]">Verified Engineering Portfolio</span>
                 </motion.div>
-                <h2 className="text-4xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-6 drop-shadow-2xl uppercase tracking-tighter">
+                <h2 className="text-6xl md:text-9xl font-black text-zinc-800 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-cyan-400 dark:to-blue-500 mb-6 drop-shadow-2xl uppercase tracking-tighter">
                   Certificates
                 </h2>
                 <p className="text-muted-foreground text-lg md:text-2xl font-medium tracking-wide">

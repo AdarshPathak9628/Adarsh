@@ -20,11 +20,17 @@ interface EduLightboxProps {
 export default function EduLightbox({ isOpen, onClose, images, title }: EduLightboxProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Reset index when opening
+  // Reset index and lock scroll when opening
   useEffect(() => {
     if (isOpen) {
       setCurrentIndex(0);
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
     }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
   }, [isOpen]);
 
   const nextSlide = (e: React.MouseEvent) => {
@@ -128,8 +134,8 @@ export default function EduLightbox({ isOpen, onClose, images, title }: EduLight
                 animate={{ opacity: 1, y: 0 }}
                 className="px-6 md:px-10 py-4 md:py-5 max-w-4xl"
               >
-                <p className="text-white dark:text-gray-200 text-xs md:text-base font-bold italic tracking-wide flex items-center justify-center gap-3 md:gap-4 text-center leading-relaxed drop-shadow-md">
-                  <Info className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0 text-cyan-400" /> {images[currentIndex].caption}
+                <p className="text-zinc-900 dark:text-gray-200 text-xs md:text-base font-bold italic tracking-wide flex items-center justify-center gap-3 md:gap-4 text-center leading-relaxed drop-shadow-md">
+                  <Info className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0 text-cyan-500 dark:text-cyan-400" /> {images[currentIndex].caption}
                 </p>
               </motion.div>
             </div>
