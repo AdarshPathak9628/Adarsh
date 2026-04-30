@@ -120,7 +120,42 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
+  html, body {
+    @apply bg-black text-foreground overflow-x-hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
+}
+
+/* Premium Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a; /* zinc-800 */
+  border-radius: 10px;
+  border: 2px solid #000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46; /* zinc-700 */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #27272a #000;
+}
+
+/* Premium Selection Color */
+::selection {
+  background: rgba(34, 211, 238, 0.2); /* cyan-400 with opacity */
+  color: #fff;
 }

@@ -76,6 +76,50 @@ const OrbitRing = ({ position, radius = 5, color = "#164e63", speed = 0.15 }: { 
   );
 };
 
+/* ─── Profile Card with Dynamic Positioning ─── */
+const ProfileCard = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const meshRef = useRef<THREE.Group>(null);
+  const { camera } = useThree();
+  
+  // Hero and Education target positions
+  const heroPos = useMemo(() => new THREE.Vector3(0, 6, 2), []);
+  const eduPos = useMemo(() => new THREE.Vector3(8, 6, 5), []); // Offset to the right for Education section
+  
+  useFrame(() => {
+    if (meshRef.current) {
+      // Calculate interpolation factor based on camera Z position
+      // Camera Z goes from -10 (Hero) to 2 (Education)
+      const t = THREE.MathUtils.smoothstep(camera.position.z, -10, 2);
+      
+      // Interpolate position
+      meshRef.current.position.lerpVectors(heroPos, eduPos, t);
+      
+      // Fade slightly as we transition to keep it subtle
+      if (ref.current) {
+        const opacity = 1 - (t * 0.2); // Stay mostly visible
+        ref.current.style.opacity = String(opacity);
+      }
+    }
+  });
+
+  return (
+    <group ref={meshRef} position={[0, 6, 2]}>
+      <Html center zIndexRange={[200, 0]}>
+        <div ref={ref} className="group flex flex-col items-center bg-white/5 p-6 sm:p-8 rounded-[2.5rem] border border-white/10 backdrop-blur-2xl shadow-[0_0_30px_rgba(0,150,200,0.1)] hover:shadow-[0_0_50px_rgba(0,200,255,0.3)] hover:border-cyan-500/40 pointer-events-auto transform scale-75 sm:scale-90 lg:scale-100 origin-center transition-all duration-500">
+          <div className="relative rounded-full p-[3px] bg-gradient-to-br from-cyan-500 via-blue-600 to-indigo-600 shadow-[0_0_20px_rgba(0,150,200,0.3)] group-hover:shadow-[0_0_40px_rgba(0,200,255,0.5)] transition-shadow duration-500">
+            <div className="w-32 h-32 sm:w-44 sm:h-44 rounded-full overflow-hidden bg-black">
+              <img src={profileImg.src} alt="Adarsh Pathak" className="w-full h-full rounded-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+            </div>
+          </div>
+          <p className="text-white mt-5 sm:mt-6 font-black text-xl sm:text-2xl tracking-wide group-hover:text-cyan-200 transition-colors">Adarsh Pathak</p>
+          <p className="text-cyan-500 text-[10px] sm:text-xs font-bold tracking-[0.25em] uppercase mt-2">DevOps Engineer</p>
+        </div>
+      </Html>
+    </group>
+  );
+};
+
 /* ─── Main Scene ─── */
 const SceneContent = () => {
   return (
@@ -93,19 +137,7 @@ const SceneContent = () => {
       <group position={[0, 0, -20]}>
         <WireframeSphere position={[-5, 5, -4]} radius={6} color="#0c4a6e" />
         <OrbitRing position={[-5, 5, -4]} radius={8} color="#155e75" speed={0.1} />
-
-        {/* Profile Card */}
-        <Html position={[0, 6, 2]} center zIndexRange={[100, 0]}>
-          <div className="group flex flex-col items-center bg-white/5 p-6 sm:p-8 rounded-[2.5rem] border border-white/10 backdrop-blur-2xl shadow-[0_0_20px_rgba(0,150,200,0.08)] hover:shadow-[0_0_40px_rgba(0,200,255,0.2)] hover:border-cyan-500/30 pointer-events-auto transform scale-75 sm:scale-100 origin-center transition-all duration-500">
-            <div className="relative rounded-full p-[3px] bg-gradient-to-br from-cyan-500 via-blue-600 to-indigo-600 shadow-[0_0_15px_rgba(0,150,200,0.2)] group-hover:shadow-[0_0_30px_rgba(0,200,255,0.4)] transition-shadow duration-500">
-              <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden bg-black">
-                <img src={profileImg.src} alt="Adarsh Pathak" className="w-full h-full rounded-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
-              </div>
-            </div>
-            <p className="text-white mt-5 sm:mt-6 font-black text-2xl sm:text-3xl tracking-wide group-hover:text-cyan-200 transition-colors">Adarsh Pathak</p>
-            <p className="text-cyan-500 text-xs font-bold tracking-[0.25em] uppercase mt-2">DevOps Engineer</p>
-          </div>
-        </Html>
+        <ProfileCard />
       </group>
 
       {/* ── Zone 2: Education ── */}

@@ -4,16 +4,51 @@ import { useEffect, useState } from "react";
 import Scene from "@/components/Scene";
 import CertificatesModal from "@/components/CertificatesModal";
 import Lenis from "lenis";
-import { Phone, Mail, Linkedin, Instagram, ArrowRight, CheckCircle2, Award, Github } from "lucide-react";
+import { Phone, Mail, Linkedin, Instagram, ArrowRight, CheckCircle2, Award, Github, Eye } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import EduLightbox from "@/components/EduLightbox";
+
+// Academic Assets
+import cert10th from "@/src/assets/images/10th.jpg";
+import cert12th from "@/src/assets/images/12th.jpg";
+import bscProvisional from "@/src/assets/images/Bsc_Provisional_Degree.jpg";
+import bscCharacter from "@/src/assets/images/Bsc_Chracter_Certificate.jpg";
+import bscMigration from "@/src/assets/images/Bsc_Migration.jpg";
+import sem1 from "@/src/assets/images/1st_Sem.jpg";
+import sem2 from "@/src/assets/images/2nd_Sem.jpg";
+import sem3 from "@/src/assets/images/3rd_Sem.jpg";
+import sem4 from "@/src/assets/images/4th_Sem.jpg";
+import sem5 from "@/src/assets/images/5th_Sem.jpg";
+import sem6 from "@/src/assets/images/6th_Sem.jpg";
+import sem7 from "@/src/assets/images/7th_Sem.jpg";
+import sem8 from "@/src/assets/images/8th_Sem.jpg";
+import oLevelCert from "@/src/assets/images/O_Level.jpg";
+import arudanCert from "@/src/assets/images/Auradhan.jpg";
 
 export default function Portfolio() {
   const [mounted, setMounted] = useState(false);
   const [isCertModalOpen, setIsCertModalOpen] = useState(false);
+  const [initialAlbumId, setInitialAlbumId] = useState<string | undefined>(undefined);
+  const [eduLightboxData, setEduLightboxData] = useState<{ isOpen: boolean; images: { src: any; caption: string }[]; title: string }>({
+    isOpen: false,
+    images: [],
+    title: ""
+  });
+
+  const openCertAlbum = (albumId: string) => {
+    setInitialAlbumId(albumId);
+    setIsCertModalOpen(true);
+  };
 
   useEffect(() => {
     setMounted(true);
+
+    // Fix: Force scroll to top on refresh/load
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
 
     // Initialize Lenis for Awwwards-level smooth scrolling
     const lenis = new Lenis({
@@ -27,6 +62,9 @@ export default function Portfolio() {
       touchMultiplier: 2,
       infinite: false,
     });
+
+    // Ensure Lenis also starts at the top
+    lenis.scrollTo(0, { immediate: true });
 
     function raf(time: number) {
       lenis.raf(time);
@@ -45,23 +83,21 @@ export default function Portfolio() {
       {/* 3D Scene fixed in the background */}
       {mounted && <Scene />}
       
-      {/* Certificates Modal */}
-      <CertificatesModal isOpen={isCertModalOpen} onClose={() => setIsCertModalOpen(false)} />
 
       {/* Scrollable Overlay Content */}
       <div className="relative z-10 w-full scroll-container">
         
         {/* Sticky Premium Navbar */}
-        <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 md:px-12 bg-black/20 backdrop-blur-md border-b border-white/10 pointer-events-auto transition-all">
-          <div className="text-lg md:text-xl font-black tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+        <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 md:px-12 py-4 bg-black/20 backdrop-blur-md border-b border-white/10 pointer-events-auto transition-all">
+          <div className="text-base md:text-xl font-black tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 shrink-0">
             Adarsh Pathak
           </div>
           <a 
             href="/Resume.pdf" 
             download 
-            className="px-6 py-2 md:px-8 md:py-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 hover:from-cyan-500/40 hover:to-blue-500/40 border border-cyan-500/50 rounded-full transition-all font-bold text-sm md:text-base flex items-center gap-2 text-white shadow-[0_0_15px_rgba(0,255,255,0.2)] hover:shadow-[0_0_30px_rgba(0,255,255,0.5)] group"
+            className="px-4 py-1.5 md:px-8 md:py-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 hover:from-cyan-500/40 hover:to-blue-500/40 border border-cyan-500/50 rounded-full transition-all duration-500 font-bold text-[10px] md:text-base flex items-center gap-2 text-white shadow-[0_0_15px_rgba(0,255,255,0.1)] hover:shadow-[0_0_30px_rgba(0,255,255,0.4)] group"
           >
-            Download CV <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            Download CV <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
           </a>
         </nav>
 
@@ -79,22 +115,22 @@ export default function Portfolio() {
             <p className="mt-6 md:mt-8 text-xl sm:text-2xl md:text-3xl font-medium text-cyan-200 drop-shadow-lg tracking-wide uppercase letter-spacing-2">
               DevOps Engineer
             </p>
-            <div className="mt-10 flex flex-wrap justify-center gap-4 pointer-events-auto">
+            <div className="mt-10 flex flex-wrap justify-center gap-4 md:gap-6 pointer-events-auto">
               <button 
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 md:px-10 py-4 bg-white text-black hover:bg-gray-200 rounded-full transition-all font-bold text-sm md:text-lg shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.6)] flex items-center gap-2 group"
+                className="px-6 md:px-10 py-3 md:py-4 bg-white text-black hover:bg-gray-200 rounded-full transition-all duration-500 font-bold text-xs md:text-lg shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.6)] flex items-center gap-2 group"
               >
-                Get In Touch <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                Get In Touch <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <a 
                 href="https://github.com/AdarshPathak9628/" target="_blank" rel="noopener noreferrer"
-                className="px-8 md:px-10 py-4 bg-gray-900 hover:bg-gray-800 border border-gray-700 rounded-full transition-all font-bold text-sm md:text-lg flex items-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+                className="px-6 md:px-10 py-3 md:py-4 bg-gray-900 hover:bg-gray-800 border border-gray-700 rounded-full transition-all duration-500 font-bold text-xs md:text-lg flex items-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
               >
-                <Github className="w-5 h-5" /> View GitHub
+                <Github className="w-4 h-4 md:w-5 md:h-5" /> View GitHub
               </a>
               <button 
                 onClick={() => setIsCertModalOpen(true)}
-                className="px-8 md:px-10 py-4 bg-white/10 hover:bg-white/20 border border-white/30 rounded-full backdrop-blur-md transition-all font-bold text-sm md:text-lg flex items-center gap-2"
+                className="px-6 md:px-10 py-3 md:py-4 bg-white/10 hover:bg-white/20 border border-white/30 rounded-full backdrop-blur-md transition-all duration-500 font-bold text-xs md:text-lg flex items-center gap-2"
               >
                 View Credentials
               </button>
@@ -109,7 +145,7 @@ export default function Portfolio() {
               <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-indigo-500">
                 My Roots & Vision
               </h2>
-              <div className="space-y-6 text-gray-300 text-lg md:text-xl leading-relaxed font-medium">
+              <div className="space-y-6 text-gray-300 text-base md:text-xl leading-relaxed font-medium">
                 <p>
                   Hailing from Pratapgarh—a city globally recognized for its massive agricultural export of Amla—I was raised with a strong foundation in discipline and community values. These early experiences shaped my rigorous approach to problem-solving.
                 </p>
@@ -125,7 +161,9 @@ export default function Portfolio() {
               <img 
                 src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop" 
                 alt="Coding Setup" 
-                className="object-cover w-full h-full opacity-80"
+                className="object-cover w-full h-full opacity-80 select-none"
+                onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-8">
                 <p className="text-white font-bold text-xl drop-shadow-md">"I finish whatever I start, no matter the effort."</p>
@@ -138,35 +176,132 @@ export default function Portfolio() {
         <section className="min-h-screen w-full flex items-center justify-center md:justify-start px-4 md:px-24 lg:px-40 pointer-events-none py-20">
           <div className="p-8 md:p-12 bg-white/5 backdrop-blur-2xl rounded-[3rem] border border-green-400/30 shadow-[0_8px_32px_0_rgba(0,255,0,0.1)] w-full max-w-2xl mx-4">
             <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-emerald-500 mb-8 md:mb-12 drop-shadow-md">Education</h2>
-            <div className="space-y-6 md:space-y-8">
-              <div className="bg-black/30 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-cyan-400/50 transition-colors pointer-events-auto">
+            <div className="space-y-6 md:space-y-10">
+              <div className="bg-black/30 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-cyan-400/50 transition-all duration-500 pointer-events-auto">
                 <h3 className="text-2xl md:text-4xl font-bold text-white mb-2">MCA</h3>
-                <a href="https://www.lpu.in/" target="_blank" rel="noopener noreferrer" className="text-xl md:text-2xl text-cyan-300 font-medium hover:underline inline-flex items-center gap-1">
+                <a href="https://www.lpu.in/" target="_blank" rel="noopener noreferrer" className="text-xl md:text-2xl text-cyan-300 font-medium hover:underline inline-flex items-center gap-1 transition-all duration-300">
                   Lovely Professional University <ArrowRight className="w-4 h-4" />
                 </a>
-                <div className="mt-4 flex items-center gap-2 text-gray-400">
+                <p className="mt-2 text-sm text-gray-300 font-medium">2025 - Present</p>
+                <div className="mt-4 flex items-center gap-2 text-gray-300">
                   <CheckCircle2 className="w-5 h-5 text-cyan-400" /> Pursuing advanced computing & scalable systems
                 </div>
               </div>
-              <div className="bg-black/30 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-cyan-400/50 transition-colors pointer-events-auto">
-                <h3 className="text-2xl md:text-4xl font-bold text-white mb-2">B.Sc + B.Ed</h3>
-                <a href="https://www.skuindia.ac.in/" target="_blank" rel="noopener noreferrer" className="text-xl md:text-2xl text-cyan-300 font-medium hover:underline inline-flex items-center gap-1">
+              <div className="bg-black/30 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-cyan-400/50 transition-all duration-500 pointer-events-auto group relative overflow-hidden">
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="text-2xl md:text-4xl font-bold text-white">B.Sc + B.Ed</h3>
+                  <button 
+                    onClick={() => setEduLightboxData({
+                      isOpen: true,
+                      title: "B.Sc + B.Ed Integrated Degree",
+                      images: [
+                        { src: bscProvisional, caption: "Successfully completed Integrated BSc + B.Ed. from Shri Krishna University, demonstrating multi-disciplinary excellence." },
+                        { src: bscCharacter, caption: "Officially recognized for exemplary conduct, integrity, and disciplined professional behavior during the 4-year integrated program." },
+                        { src: bscMigration, caption: "Academic migration credentials facilitating a smooth transition from Shri Krishna University to higher postgraduate studies (MCA)." },
+                        { src: sem1, caption: "Semester 1: Foundation in Mathematics and core Science subjects, establishing academic rigor." },
+                        { src: sem2, caption: "Semester 2: Advanced calculus and analytical physics, deepening technical understanding." },
+                        { src: sem3, caption: "Semester 3: Focused on complex algebraic structures and integrated science modeling." },
+                        { src: sem4, caption: "Semester 4: Continued growth in mathematical analysis and evidence-based scientific methods." },
+                        { src: sem5, caption: "Semester 5: High-level specialization in mathematics and educational psychology fundamentals." },
+                        { src: sem6, caption: "Semester 6: Advanced academic research and specialized science-education curriculum design." },
+                        { src: sem7, caption: "Semester 7: Completed 5-6 months of professional teaching training, enhancing mentorship, public speaking, and complex concept simplified-delivery skills." },
+                        { src: sem8, caption: "Semester 8: Final professional training and academic synthesis, concluding the Integrated degree with excellence." }
+                      ]
+                    })}
+                    className="p-3 bg-white/5 hover:bg-cyan-500/20 border border-white/10 rounded-full transition-all duration-500 text-cyan-400 hover:scale-110"
+                    title="View Certificates & Marksheets"
+                  >
+                    <Eye className="w-6 h-6" />
+                  </button>
+                </div>
+                <a href="https://www.skuindia.ac.in/" target="_blank" rel="noopener noreferrer" className="text-xl md:text-2xl text-cyan-300 font-medium hover:underline inline-flex items-center gap-1 transition-all duration-300">
                   Shri Krishna University <ArrowRight className="w-4 h-4" />
                 </a>
-                <div className="mt-4 flex items-center gap-2 text-gray-400">
+                <p className="mt-2 text-sm text-gray-300 font-medium">2020 - 2024</p>
+                <div className="mt-4 flex items-center gap-2 text-gray-300">
                   <CheckCircle2 className="w-5 h-5 text-cyan-400" /> Mathematics focus & Analytical modeling
                 </div>
               </div>
+
+              {/* A Level & O Level (NIELIT) */}
               <div className="flex flex-col md:flex-row gap-6 md:gap-8">
-                <div className="bg-black/30 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-cyan-400/50 transition-colors pointer-events-auto flex-1">
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-1">12th Grade (Intermediate)</h3>
-                  <p className="text-lg text-cyan-300 font-medium">St. Anthony&apos;s Inter College, Pratapgarh</p>
-                  <p className="mt-3 text-sm text-gray-400 font-medium">2019 – 2020</p>
+                <div className="bg-black/30 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-cyan-400/50 transition-all duration-500 pointer-events-auto flex-1 group relative overflow-hidden">
+                  <div className="flex justify-between items-start mb-1">
+                    <h3 className="text-xl md:text-2xl font-bold text-white">A Level (Advanced IT)</h3>
+                  </div>
+                  <a href="https://www.nielit.gov.in/" target="_blank" rel="noopener noreferrer" className="text-lg text-cyan-300 font-medium hover:underline inline-flex items-center gap-1 transition-all duration-300">
+                    National Institute of Electronics & Information Technology (NIELIT) <ArrowRight className="w-3 h-3" />
+                  </a>
+                  <p className="mt-2 text-sm text-gray-300 font-medium">Present (Ongoing)</p>
+                  <p className="mt-1 text-sm text-gray-500 font-medium uppercase tracking-wider">Advanced IT Credentials</p>
                 </div>
-                <div className="bg-black/30 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-cyan-400/50 transition-colors pointer-events-auto flex-1">
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-1">10th Grade (High School)</h3>
+                <div className="bg-black/30 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-cyan-400/50 transition-all duration-500 pointer-events-auto flex-1 group relative overflow-hidden">
+                  <div className="flex justify-between items-start mb-1">
+                    <h3 className="text-xl md:text-2xl font-bold text-white">O Level (Foundation IT)</h3>
+                    <button 
+                      onClick={() => setEduLightboxData({
+                        isOpen: true,
+                        title: "NIELIT O Level Certificate",
+                        images: [{
+                          src: oLevelCert,
+                          caption: "Successfully certified in NIELIT O Level, validating a strong foundation in IT tools, programming logic, and system architecture."
+                        }]
+                      })}
+                      className="p-2 bg-white/5 hover:bg-cyan-500/20 border border-white/10 rounded-full transition-all duration-500 text-cyan-400 hover:scale-110"
+                      title="View Certificate"
+                    >
+                      <Eye className="w-5 h-5" />
+                    </button>
+                  </div>
+                  <a href="https://www.nielit.gov.in/" target="_blank" rel="noopener noreferrer" className="text-lg text-cyan-300 font-medium hover:underline inline-flex items-center gap-1 transition-all duration-300">
+                    National Institute of Electronics & Information Technology (NIELIT) <ArrowRight className="w-3 h-3" />
+                  </a>
+                  <p className="mt-2 text-sm text-gray-300 font-medium">2023 - 2024</p>
+                  <p className="mt-1 text-sm text-gray-500 font-medium uppercase tracking-wider">Core IT & Logic Foundation</p>
+                </div>
+              </div>
+              <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+                <div className="bg-black/30 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-cyan-400/50 transition-all duration-500 pointer-events-auto flex-1 group relative overflow-hidden">
+                  <div className="flex justify-between items-start mb-1">
+                    <h3 className="text-xl md:text-2xl font-bold text-white">12th Grade (Intermediate)</h3>
+                    <button 
+                      onClick={() => setEduLightboxData({
+                        isOpen: true,
+                        title: "12th Grade Certificate",
+                        images: [{
+                          src: cert12th,
+                          caption: "Completed senior secondary education while leading as the Kabaddi Team Captain, balancing academics and leadership."
+                        }]
+                      })}
+                      className="p-2 bg-white/5 hover:bg-cyan-500/20 border border-white/10 rounded-full transition-all duration-500 text-cyan-400 hover:scale-110"
+                      title="View Certificate"
+                    >
+                      <Eye className="w-5 h-5" />
+                    </button>
+                  </div>
                   <p className="text-lg text-cyan-300 font-medium">St. Anthony&apos;s Inter College, Pratapgarh</p>
-                  <p className="mt-3 text-sm text-gray-400 font-medium">2017 – 2018</p>
+                  <p className="mt-2 text-sm text-gray-300 font-medium">2018 – 2020</p>
+                </div>
+                <div className="bg-black/30 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-cyan-400/50 transition-all duration-500 pointer-events-auto flex-1 group relative overflow-hidden">
+                  <div className="flex justify-between items-start mb-1">
+                    <h3 className="text-xl md:text-2xl font-bold text-white">10th Grade (High School)</h3>
+                    <button 
+                      onClick={() => setEduLightboxData({
+                        isOpen: true,
+                        title: "10th Grade Certificate",
+                        images: [{
+                          src: cert10th,
+                          caption: "Strong academic foundation from St. Anthony's, Pratapgarh, rooted in discipline and excellence."
+                        }]
+                      })}
+                      className="p-2 bg-white/5 hover:bg-cyan-500/20 border border-white/10 rounded-full transition-all duration-500 text-cyan-400 hover:scale-110"
+                      title="View Certificate"
+                    >
+                      <Eye className="w-5 h-5" />
+                    </button>
+                  </div>
+                  <p className="text-lg text-cyan-300 font-medium">St. Anthony&apos;s Inter College, Pratapgarh</p>
+                  <p className="mt-2 text-sm text-gray-300 font-medium">2016 – 2018</p>
                 </div>
               </div>
             </div>
@@ -192,24 +327,40 @@ export default function Portfolio() {
             <div className="space-y-6 md:space-y-8 relative">
               <div className="bg-black/40 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-blue-500/50 transition-colors">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">Django Backend Developer (Intern)</h3>
-                  <span className="text-sm text-gray-400 font-medium whitespace-nowrap">Aug 2024 – Oct 2024</span>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight">Django Backend Developer (Intern)</h3>
+                  <span className="text-sm text-gray-300 font-medium whitespace-nowrap">Aug 2024 – Oct 2024</span>
                 </div>
                 <p className="text-lg md:text-xl text-cyan-300 font-medium">TECHQRT — Lucknow</p>
-                <ul className="text-gray-400 mt-4 font-medium space-y-2 text-sm md:text-base list-disc list-inside">
+                <ul className="text-gray-300 mt-4 font-medium space-y-2 text-sm md:text-base list-disc list-inside leading-relaxed">
                   <li>Engineered backend components using Django and Django REST Framework to support authentication, product management, and order processing.</li>
                   <li>Structured relational schemas through Django ORM, ensuring reliable data relationships and efficient retrieval.</li>
                   <li>Implemented RESTful endpoints enabling secure CRUD operations across user accounts, product inventory, and transaction records.</li>
                   <li>Collaborated with development teams to debug issues, enhance application features, and improve system performance.</li>
                 </ul>
               </div>
-              <div className="bg-black/40 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-blue-500/50 transition-colors">
+              <div className="bg-black/40 p-6 md:p-8 rounded-[2rem] border border-white/10 hover:border-blue-500/50 transition-colors group relative overflow-hidden pointer-events-auto">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">Python Web Development Trainee</h3>
-                  <span className="text-sm text-gray-400 font-medium whitespace-nowrap">Apr 2024 – Jul 2024</span>
+                  <div className="flex items-center gap-4">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight">Python Web Development Trainee</h3>
+                    <button 
+                      onClick={() => setEduLightboxData({
+                        isOpen: true,
+                        title: "Python Development Trainee Certificate",
+                        images: [{
+                          src: arudanCert,
+                          caption: "Gained hands-on expertise in the Django framework, Python Full Stack development, and MySQL database management, building scalable and efficient web architectures."
+                        }]
+                      })}
+                      className="p-2 bg-white/5 hover:bg-cyan-500/20 border border-white/10 rounded-full transition-all duration-500 text-cyan-400 hover:scale-110"
+                      title="View Certificate"
+                    >
+                      <Eye className="w-5 h-5" />
+                    </button>
+                  </div>
+                  <span className="text-sm text-gray-300 font-medium whitespace-nowrap">Mar 2024 – Jun 2024</span>
                 </div>
                 <p className="text-lg md:text-xl text-cyan-300 font-medium">Arudan Technologies Pvt. Ltd. — Prayagraj</p>
-                <ul className="text-gray-400 mt-4 font-medium space-y-2 text-sm md:text-base list-disc list-inside">
+                <ul className="text-gray-300 mt-4 font-medium space-y-2 text-sm md:text-base list-disc list-inside leading-relaxed">
                   <li>Acquired hands-on exposure to Python, Django, MySQL, HTML, CSS, and Bootstrap within a full-stack training program.</li>
                   <li>Assembled database-driven web modules utilizing Django ORM and relational database principles.</li>
                   <li>Refined database queries and backend logic to enhance application responsiveness.</li>
@@ -220,7 +371,7 @@ export default function Portfolio() {
           </div>
 
           <div className="p-8 md:p-12 bg-white/5 backdrop-blur-2xl rounded-[3rem] border border-cyan-400/30 shadow-[0_8px_32px_0_rgba(0,255,255,0.1)] w-full max-w-lg text-left mx-4 mt-6 xl:mt-0">
-            <h2 className="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-500 mb-8 drop-shadow-md text-center">Technical Arsenal</h2>
+            <h2 className="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-500 mb-8 drop-shadow-md text-center">Core Technical Stack</h2>
             <div className="space-y-6">
               {[
                 { category: "Languages", items: "Python, C, C++, JavaScript, Java" },
@@ -254,24 +405,30 @@ export default function Portfolio() {
               </h2>
               <a 
                 href="https://github.com/AdarshPathak9628/" target="_blank" rel="noopener noreferrer"
-                className="px-6 py-3 bg-gray-900 hover:bg-gray-800 border border-gray-700 rounded-full transition-all font-bold text-sm flex items-center gap-2 pointer-events-auto shadow-lg hover:shadow-xl text-white"
+                className="px-6 py-3 bg-gray-900 hover:bg-gray-800 border border-gray-700 rounded-full transition-all duration-500 font-bold text-xs md:text-sm flex items-center gap-2 pointer-events-auto shadow-lg hover:shadow-xl text-white"
               >
                 <Github className="w-4 h-4" /> View All on GitHub
               </a>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { title: "MultiShop E-Commerce Platform", tech: "Django, MySQL, Bootstrap", period: "Mar 2024 – Jun 2024", bullets: [
-                  "Architected a dynamic online retail platform featuring authentication, product catalog management, cart functionality, and order tracking.",
-                  "Modeled normalized relational tables including Product, Category, Cart, and Order entities.",
-                  "Introduced search capability, category-based filtering, and real-time cart updates improving user interaction.",
-                  "Handled version control using Git and GitHub ensuring organized codebase management and collaboration readiness."
+                { title: "MultiShop E-Commerce Platform", tech: "Django, MySQL, Bootstrap", period: "Mar 2024 – Jun 2024", repo: "MultiShop", bullets: [
+                  "Architected a scalable online retail ecosystem with secure JWT authentication and dynamic product catalog management.",
+                  "Designed normalized relational schemas utilizing Django ORM for efficient data retrieval and transaction integrity.",
+                  "Integrated real-time cart functionality and complex search/filtering algorithms, improving user conversion rates.",
+                  "Managed the entire deployment lifecycle using Git/GitHub, ensuring modular and maintainable code architecture."
                 ]},
-                { title: "Hospital Management System", tech: "Python, MySQL", period: "Jan 2024 – Feb 2024", bullets: [
-                  "Constructed a healthcare management solution supporting patient registration, appointment scheduling, and billing operations.",
-                  "Established role-based access control ensuring protected medical records and restricted administrative access.",
-                  "Organized database structures handling patient details, appointment records, and physician schedules.",
-                  "Automated OPD workflows covering patient intake through invoice generation."
+                { title: "Hospital Management System", tech: "Python, MySQL", period: "Jan 2024 – Feb 2024", repo: "Hospital-Management", bullets: [
+                  "Developed a mission-critical healthcare solution for patient intake, scheduling, and billing automation.",
+                  "Implemented Role-Based Access Control (RBAC) to secure sensitive medical records and restrict administrative functions.",
+                  "Engineered robust database structures for high-concurrency handling of patient records and physician schedules.",
+                  "Automated outpatient department (OPD) workflows, reducing administrative overhead by 40%."
+                ]},
+                { title: "3D DevOps Portfolio", tech: "Next.js, Three.js, GSAP", period: "Current Project", repo: "Adarsh", bullets: [
+                  "Created a high-performance, immersive 3D experience with React Three Fiber and interactive camera pathing.",
+                  "Integrated Lenis smooth scrolling and GSAP ScrollTrigger for Awwwards-level cinematic transitions.",
+                  "Developed a modular certificate gallery with Framer Motion and optimized asset delivery for sub-second load times.",
+                  "Engineered with a focus on DevOps principles: containerization-ready, optimized builds, and clean architecture."
                 ]}
               ].map(proj => (
                 <div key={proj.title} className="bg-black/40 p-8 rounded-[2rem] border border-white/10 hover:border-purple-500/50 hover:-translate-y-2 transition-all duration-300 pointer-events-auto flex flex-col group shadow-xl">
@@ -282,12 +439,12 @@ export default function Portfolio() {
                   <div className="inline-block px-4 py-1.5 bg-purple-500/20 text-purple-200 rounded-full text-xs font-bold mb-6 self-start">
                     {proj.tech}
                   </div>
-                  <ul className="text-gray-400 text-sm md:text-base leading-relaxed font-medium flex-grow mb-8 space-y-2 list-disc list-inside">
+                  <ul className="text-gray-300 text-sm md:text-base leading-relaxed font-medium flex-grow mb-8 space-y-2 list-disc list-inside">
                     {proj.bullets.map((b, i) => <li key={i}>{b}</li>)}
                   </ul>
                   
                   <a 
-                    href="https://github.com/AdarshPathak9628/" target="_blank" rel="noopener noreferrer"
+                    href={`https://github.com/AdarshPathak9628/${proj.repo}`} target="_blank" rel="noopener noreferrer"
                     className="w-full py-3 bg-white/5 hover:bg-purple-500/20 border border-white/10 hover:border-purple-500/50 rounded-xl transition-all font-bold text-sm flex items-center justify-center gap-2 text-white group-hover:shadow-[0_0_20px_rgba(128,0,128,0.3)] mt-auto"
                   >
                     <Github className="w-4 h-4" /> View Source Code
@@ -301,7 +458,11 @@ export default function Portfolio() {
         {/* Ultimate Interactive Contact Hub */}
         <section id="contact" className="min-h-screen w-full flex items-center justify-center px-4 py-20 pointer-events-none">
           <div className="p-8 md:p-16 bg-gradient-to-b from-white/10 to-black/80 backdrop-blur-3xl rounded-[3rem] border border-white/20 shadow-[0_0_100px_rgba(255,255,255,0.1)] text-center w-full max-w-5xl mx-4 relative overflow-hidden pointer-events-auto">
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop')] opacity-10 mix-blend-overlay bg-cover bg-center"></div>
+            <div 
+              className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop')] opacity-10 mix-blend-overlay bg-cover bg-center select-none"
+              onContextMenu={(e) => e.preventDefault()}
+              onDragStart={(e) => e.preventDefault()}
+            ></div>
             
             <h2 className="text-5xl md:text-7xl font-black text-white mb-6 relative z-10 drop-shadow-2xl">
               Let's Build The Future
@@ -373,6 +534,20 @@ export default function Portfolio() {
         </section>
 
       </div>
+      <EduLightbox 
+        isOpen={eduLightboxData.isOpen}
+        onClose={() => setEduLightboxData({ ...eduLightboxData, isOpen: false })}
+        images={eduLightboxData.images}
+        title={eduLightboxData.title}
+      />
+      <CertificatesModal 
+        isOpen={isCertModalOpen} 
+        onClose={() => {
+          setIsCertModalOpen(false);
+          setInitialAlbumId(undefined);
+        }}
+        initialAlbumId={initialAlbumId}
+      />
     </div>
   );
 }

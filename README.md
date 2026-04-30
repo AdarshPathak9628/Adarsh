@@ -1,92 +1,101 @@
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=300&section=header&text=Adarsh%20Pathak&fontSize=90&fontAlignY=38&desc=Full%20Stack%20%7C%203D%20Web%20Developer&descAlignY=55&descAlign=50" alt="Adarsh Pathak Banner" width="100%" />
+# 🚀 Advanced 3D Developer Portfolio & Interactive Credentials Showcase
 
-  <h1 align="center">Welcome to My 3D Cinematic Portfolio 🌌</h1>
-
-  <p align="center">
-    <strong>An immersive, scroll-driven journey across an abstract 3D map.</strong>
-    <br />
-    <br />
-    <a href="#-tech-stack">Tech Stack</a>
-    ·
-    <a href="#-key-features">Features</a>
-    ·
-    <a href="#-running-locally">Run Locally</a>
-    ·
-    <a href="#-github-stats">Stats</a>
-  </p>
-</div>
+A premium, high-performance developer portfolio built with **Next.js 14**, **Three.js**, and **Framer Motion**. This project serves as a comprehensive showcase of engineering expertise across DevOps, Full-Stack Development, Cloud Infrastructure, and IoT Innovation.
 
 ---
 
-## 👨‍💻 About Me
-Hello! I am **Adarsh Pathak**, a passionate Full Stack and Django Backend Developer from Uttar Pradesh, India. I specialize in building highly optimized web applications and immersive 3D web experiences. This portfolio is a cinematic showcase of my skills, projects, and journey.
+## 👨‍💻 About The Developer: Adarsh Pathak
+**DevOps Engineer | Python Full-Stack Developer | IoT Innovator**
 
-## 🚀 Tech Stack
+Highly analytical and process-driven engineer with a focus on scalable cloud architectures and automated deployment pipelines. Experienced in bridging the gap between hardware (IoT) and software (Web Systems), with a prestigious track record of global certifications (Oracle, IBM, NIELIT) and hackathon victories.
 
-<div align="center">
-  <img src="https://skillicons.dev/icons?i=react,tailwind,python,django,mysql,js,html,css" alt="Tech Stack" />
-</div>
+---
 
-<br/>
+## 🛠️ Technical Ecosystem
 
-- **Frontend:** React.js, Next.js, Tailwind CSS
-- **3D & Animation:** Three.js, React Three Fiber, GSAP (ScrollTrigger)
-- **Backend:** Python, Django
-- **Databases:** MySQL, SQLite3
+### **Frontend & Visuals**
+*   **Framework:** Next.js 14 (App Router)
+*   **3D Engine:** Three.js / React Three Fiber (Interactive background orchestration)
+*   **Styling:** Tailwind CSS (Modern aesthetics, glassmorphism, responsive design)
+*   **Animations:** Framer Motion (Fluid transitions, micro-interactions)
+*   **Typography:** Google Inter & Geist Sans (Optimized for technical readability)
+
+### **Backend & Architecture**
+*   **Core:** Python / Django (Robust backend services)
+*   **Database:** MySQL / PostgreSQL (Relational data modeling)
+*   **DevOps:** GitHub Actions, Vercel CI/CD, Ngrok (Local tunneling)
+*   **Cloud:** Oracle Cloud Infrastructure (OCI), IBM Cloud (Data Engineering)
+
+---
 
 ## ✨ Key Features
 
-- 🎥 **Cinematic Scroll Journey:** The user's scroll directly controls the 3D camera, flying dynamically across different abstract zones (North, Delhi, UP Hub, East).
-- ⛅ **Dynamic Lighting & Fog:** As the camera enters new zones, the entire environment smoothly morphs—shifting from sky-blue winter fog to vibrant greens, majestic golden-hour hues, and twilight blues.
-- 🪟 **Floating 3D UI Overlays:** Resumes, education details, skills, and featured projects seamlessly fade into view as gorgeous, glass-like HTML overlays anchored to 3D landmarks.
-- ⚡ **Optimized Performance:** Carefully structured to maintain a buttery smooth **60fps** experience across devices.
-
-## 📊 GitHub Stats
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=AdarshPathak9628&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117" alt="Adarsh's GitHub Stats" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=AdarshPathak9628&theme=tokyonight&hide_border=true&background=0d1117" alt="Adarsh's GitHub Streak" />
-</div>
-<br/>
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AdarshPathak9628&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117" alt="Top Languages" />
-</div>
-
-## 💻 Running Locally
-
-To run this beautifully crafted portfolio on your own machine, follow these simple steps:
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/AdarshPathak9628/Adarsh.git
-   ```
-
-2. **Navigate to the project folder:**
-   ```bash
-   cd Adarsh
-   ```
-
-3. **Install the dependencies:**
-   ```bash
-   npm install --legacy-peer-deps
-   ```
-   *(Note: `--legacy-peer-deps` ensures perfect compatibility between React 18, React Three Fiber, and Drei).*
-
-4. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-
-5. **Experience the Journey:** Open [http://localhost:3000](http://localhost:3000) in your browser and start scrolling!
-
-## 📬 Connect With Me
-
-- 📧 **Email:** adarshpathak9628@gmail.com
-- 📱 **Phone:** 09628453433
-- 📍 **Location:** Pratapgarh, Uttar Pradesh, India
+*   **🛡️ Secure Credentials Modal:** A custom-built, album-style slider for professional certifications with built-in anti-theft image protection (Right-click & Drag disabled).
+*   **🎓 Academic Timeline:** Interactive chronological education tracker with a dedicated lightbox for verified institutional records and marksheets.
+*   **🌌 Dynamic 3D Environment:** A high-fidelity, interactive 3D particle scene fixed in the background for a premium developer aesthetic.
+*   **📱 Universal Responsiveness:** Meticulously audited for mobile (375px), tablet, and desktop viewports with zero horizontal overflow.
+*   **⚡ Performance Optimized:** Optimized image delivery via Next/Image and smooth scroll restoration using Lenis.
 
 ---
-<div align="center">
-  <em>Built with passion, discipline, and a drive to innovate. Enjoy the scroll!</em>
-</div>
+
+## 🚀 Local Setup & Development
+
+Ensure you have [Node.js](https://nodejs.org/) installed on your machine.
+
+1.  **Clone the Repository:**
+    ```bash
+    git clone https://github.com/AdarshPathak9628/Adarsh.git
+    cd Adarsh
+    ```
+
+2.  **Install Dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Run Development Server:**
+    ```bash
+    npm run dev
+    ```
+    The application will be live at `http://localhost:3000`.
+
+---
+
+## 🌐 Mobile Testing via Ngrok
+
+To test the build on your mobile device or share a secure temporary link:
+
+1.  **Start your Next.js server:**
+    ```bash
+    npm run dev
+    ```
+
+2.  **Expose the local port (In a new terminal):**
+    ```bash
+    ngrok http 3000
+    ```
+    *Copy the secure `https://...` link provided by Ngrok and open it on your phone.*
+
+---
+
+## 📜 Professional Certifications
+
+Includes verified mastery in:
+*   **Oracle Cloud Infrastructure** (Database & Infrastructure)
+*   **IBM Data Science** (Python & Analytics)
+*   **NIELIT** (A Level, O Level, CCC)
+*   **Tally ERP/Prime**
+*   **IEEE Professional Recognition**
+*   **IoT Smart Umbrella Patent Drafts**
+
+---
+
+## 📬 Contact & Networking
+
+*   **Email:** [adarshpathak9628@gmail.com](mailto:adarshpathak9628@gmail.com)
+*   **LinkedIn:** [linkedin.com/in/adarsh-pathak](https://linkedin.com/in/adarsh-pathak)
+*   **GitHub:** [github.com/AdarshPathak9628](https://github.com/AdarshPathak9628)
+
+---
+
+*Designed & Engineered by Adarsh Pathak | © 2026*
