@@ -236,7 +236,7 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4 }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-background/98 backdrop-blur-3xl overflow-hidden"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 backdrop-blur-3xl overflow-hidden"
           onClick={(e) => {
             if (e.target === e.currentTarget) onClose();
           }}
@@ -360,7 +360,7 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                   <LayoutGrid className="w-4 h-4 text-cyan-400" />
                   <span className="text-xs font-bold text-foreground uppercase tracking-[0.3em]">Verified Engineering Portfolio</span>
                 </motion.div>
-                <h2 className="text-4xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-6 drop-shadow-2xl">
+                <h2 className="text-4xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-6 drop-shadow-2xl uppercase tracking-tighter">
                   Credentials Library
                 </h2>
                 <p className="text-muted-foreground text-lg md:text-2xl font-medium tracking-wide">
@@ -381,7 +381,7 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                     }}
                     className="group relative cursor-pointer"
                   >
-                    <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-border bg-card transition-all duration-500 group-hover:border-cyan-400/50 group-hover:shadow-[0_0_50px_rgba(0,255,255,0.15)]">
+                    <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-border bg-black transition-all duration-500 group-hover:border-cyan-400/50 group-hover:shadow-[0_0_50px_rgba(0,255,255,0.15)]">
                       <Image
                         src={group.coverImage}
                         alt={group.title}
@@ -390,7 +390,7 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                         onContextMenu={(e) => e.preventDefault()}
                         onDragStart={(e) => e.preventDefault()}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 
                       <div className="absolute top-6 right-6 px-4 py-2 bg-background/60 backdrop-blur-md rounded-2xl border border-border text-[10px] font-black text-foreground uppercase tracking-widest z-10 whitespace-nowrap">
                         {group.images.length} IMAGES

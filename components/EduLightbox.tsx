@@ -47,7 +47,7 @@ export default function EduLightbox({ isOpen, onClose, images, title }: EduLight
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4 }}
-          className="fixed inset-0 z-[9999] flex flex-col items-center justify-between bg-background/98 backdrop-blur-3xl overflow-hidden"
+          className="fixed inset-0 z-[9999] flex flex-col items-center justify-between bg-black/95 backdrop-blur-3xl overflow-hidden"
           onClick={(e) => {
             if (e.target === e.currentTarget) onClose();
           }}
@@ -70,7 +70,7 @@ export default function EduLightbox({ isOpen, onClose, images, title }: EduLight
             onClick={(e) => e.stopPropagation()}
           >
             <p className="text-cyan-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-2">Academic Record</p>
-            <h3 className="text-2xl md:text-5xl font-black text-foreground leading-tight px-4">{title}</h3>
+            <h3 className="text-2xl md:text-5xl font-black text-white leading-tight px-4 uppercase tracking-tighter">{title}</h3>
           </div>
 
           {/* Image Area (65% Height) with Navigation */}
@@ -107,7 +107,7 @@ export default function EduLightbox({ isOpen, onClose, images, title }: EduLight
                 <Image
                   src={images[currentIndex].src}
                   alt={title}
-                  className="object-contain w-full h-full rounded-xl shadow-[0_0_80px_rgba(0,0,0,0.5)] border border-white/5 select-none"
+                  className="object-contain w-full h-full rounded-xl shadow-[0_0_80px_rgba(0,0,0,0.8)] border border-white/10 select-none"
                   quality={100}
                   priority
                   onContextMenu={(e) => e.preventDefault()}
@@ -127,7 +127,7 @@ export default function EduLightbox({ isOpen, onClose, images, title }: EduLight
                 key={currentIndex}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="px-6 md:px-10 py-4 md:py-5 bg-card border border-border rounded-2xl backdrop-blur-md max-w-4xl"
+                className="px-6 md:px-10 py-4 md:py-5 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-md max-w-4xl"
               >
                 <p className="text-cyan-300 text-xs md:text-base font-bold italic tracking-wide flex items-center justify-center gap-3 md:gap-4 text-center leading-relaxed">
                   <Info className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" /> {images[currentIndex].caption}

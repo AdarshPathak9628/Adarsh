@@ -153,7 +153,7 @@ export default function Portfolio() {
         <section className="min-h-screen w-full flex items-center justify-center px-4 md:px-24 py-32 pointer-events-none">
           <div className="bg-card/50 backdrop-blur-2xl rounded-[3rem] border border-border p-8 md:p-16 max-w-7xl w-full mx-4 shadow-2xl flex flex-col lg:flex-row gap-12 items-center">
             <div className="w-full lg:w-1/2 space-y-8">
-              <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-700 dark:from-blue-300 dark:to-indigo-500">
+              <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-700 dark:from-blue-300 dark:to-indigo-500 uppercase tracking-tighter">
                 My Roots & Vision
               </h2>
               <div className="space-y-6 text-muted-foreground text-base md:text-xl leading-relaxed font-medium">
@@ -176,8 +176,8 @@ export default function Portfolio() {
                 onContextMenu={(e) => e.preventDefault()}
                 onDragStart={(e) => e.preventDefault()}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent flex items-end p-8">
-                <p className="text-foreground font-bold text-xl drop-shadow-md">"I finish whatever I start, no matter the effort."</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
+                <p className="text-white font-bold text-xl drop-shadow-md">"I finish whatever I start, no matter the effort."</p>
               </div>
             </div>
           </div>
@@ -186,7 +186,7 @@ export default function Portfolio() {
         {/* Zone 2: Delhi (Education & Certs) */}
         <section className="min-h-screen w-full flex items-center justify-center md:justify-start px-4 md:px-24 lg:px-40 pointer-events-none py-20">
           <div className="p-8 md:p-12 bg-card/50 backdrop-blur-2xl rounded-[3rem] border border-green-400/30 shadow-[0_8px_32px_0_rgba(0,255,0,0.1)] w-full max-w-2xl mx-4">
-            <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-700 dark:from-green-300 dark:to-emerald-500 mb-8 md:mb-12 drop-shadow-md">Education</h2>
+            <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-700 dark:from-green-300 dark:to-emerald-500 mb-8 md:mb-12 drop-shadow-md uppercase tracking-tighter">Education</h2>
             <div className="space-y-6 md:space-y-10">
               <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-cyan-400/50 transition-all duration-500 pointer-events-auto">
                 <h3 className="text-2xl md:text-4xl font-bold text-foreground mb-2">MCA</h3>
@@ -332,7 +332,7 @@ export default function Portfolio() {
         <section className="min-h-screen w-full flex flex-col xl:flex-row items-center justify-center xl:justify-end px-4 md:px-24 lg:px-40 pointer-events-none gap-6 md:gap-12 py-20">
           <div className="p-8 md:p-12 bg-card/50 backdrop-blur-2xl rounded-[3rem] border border-blue-400/30 shadow-[0_8px_32px_0_rgba(0,102,255,0.15)] w-full max-w-2xl text-center xl:text-left mx-4 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
-            <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-700 dark:from-blue-300 dark:to-indigo-500 mb-8 md:mb-12 drop-shadow-md relative">
+            <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-700 dark:from-blue-300 dark:to-indigo-500 mb-8 md:mb-12 drop-shadow-md relative uppercase tracking-tighter">
               Experience
             </h2>
             <div className="space-y-6 md:space-y-8 relative">
@@ -382,7 +382,7 @@ export default function Portfolio() {
           </div>
 
           <div className="p-8 md:p-12 bg-card/50 backdrop-blur-2xl rounded-[3rem] border border-cyan-400/30 shadow-[0_8px_32px_0_rgba(0,255,255,0.1)] w-full max-w-lg text-left mx-4 mt-12 xl:mt-0 pointer-events-auto">
-            <h2 className="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-700 dark:from-cyan-300 dark:to-blue-500 mb-8 drop-shadow-md text-center">Core Technical Stack</h2>
+            <h2 className="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-700 dark:from-cyan-300 dark:to-blue-500 mb-8 drop-shadow-md text-center uppercase tracking-tight">Core Technical Stack</h2>
             <div className="space-y-6">
               {[
                 { category: "Languages", items: "Python, C, C++, JavaScript, Java" },
@@ -420,7 +420,7 @@ export default function Portfolio() {
         <section className="min-h-[80vh] w-full flex items-center justify-center pointer-events-none px-4 py-20">
           <div className="p-8 md:p-16 bg-card/50 backdrop-blur-2xl rounded-[3rem] border border-purple-400/30 shadow-[0_8px_32px_0_rgba(128,0,128,0.15)] text-center w-full max-w-6xl mx-4">
             <div className="flex flex-col md:flex-row items-center justify-between mb-10 md:mb-16 gap-6">
-              <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-purple-400 to-indigo-500 drop-shadow-md">
+              <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-purple-400 to-indigo-500 drop-shadow-md uppercase tracking-tighter">
                 Featured Projects
               </h2>
               <a 
@@ -478,7 +478,7 @@ export default function Portfolio() {
               onDragStart={(e) => e.preventDefault()}
             ></div>
             
-            <h2 className="text-5xl md:text-7xl font-black text-foreground mb-6 relative z-10 drop-shadow-2xl">
+            <h2 className="text-5xl md:text-7xl font-black text-foreground mb-6 relative z-10 drop-shadow-2xl uppercase tracking-tighter">
               Let's Build The Future
             </h2>
             <p className="text-xl md:text-2xl text-muted-foreground mb-16 max-w-2xl mx-auto relative z-10 font-medium">
