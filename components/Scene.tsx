@@ -123,22 +123,23 @@ const ProfileCard = () => {
 
 /* ─── Main Scene ─── */
 const SceneContent = () => {
+  const { theme } = useTheme();
+  
   return (
     <group>
       {/* Base Ground */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]} receiveShadow>
         <planeGeometry args={[120, 120]} />
-        <meshPhysicalMaterial color="#030712" metalness={0.95} roughness={0.5} clearcoat={0.05} />
+        <meshPhysicalMaterial color={theme === "dark" ? "#030712" : "#ffffff"} metalness={0.95} roughness={0.5} clearcoat={0.05} />
       </mesh>
       
       {/* Very Subtle Grid */}
-      <gridHelper args={[100, 80, "#0a1628", "#050a12"]} position={[0, -1.95, 0]} />
+      <gridHelper args={[100, 80, theme === "dark" ? "#0a1628" : "#cbd5e1", theme === "dark" ? "#050a12" : "#f1f5f9"]} position={[0, -1.95, 0]} />
 
       {/* ── Zone 1: Hero ── */}
       <group position={[0, 0, -20]}>
         <WireframeSphere position={[-5, 5, -4]} radius={6} color="#0c4a6e" />
         <OrbitRing position={[-5, 5, -4]} radius={8} color="#155e75" speed={0.1} />
-        <ProfileCard />
       </group>
 
       {/* ── Zone 2: Education ── */}

@@ -75,7 +75,7 @@ export default function EduLightbox({ isOpen, onClose, images, title }: EduLight
             onClick={(e) => e.stopPropagation()}
           >
             <p className="text-cyan-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-2">Academic Record</p>
-            <h3 className="text-2xl md:text-5xl font-black text-white leading-tight px-4 uppercase tracking-tighter">{title}</h3>
+            <h3 className="text-xl md:text-4xl lg:text-5xl font-black text-white leading-tight px-4 uppercase tracking-tighter">{title}</h3>
           </div>
 
           {/* Image Area (65% Height) with Navigation */}
@@ -134,7 +134,7 @@ export default function EduLightbox({ isOpen, onClose, images, title }: EduLight
                 animate={{ opacity: 1, y: 0 }}
                 className="px-6 md:px-10 py-4 md:py-5 max-w-4xl"
               >
-                <p className="text-zinc-900 dark:text-gray-200 text-xs md:text-base font-bold italic tracking-wide flex items-center justify-center gap-3 md:gap-4 text-center leading-relaxed drop-shadow-md">
+                <p className="text-zinc-800 dark:text-gray-200 text-xs md:text-base font-bold italic tracking-wide flex items-center justify-center gap-3 md:gap-4 text-center leading-relaxed drop-shadow-md">
                   <Info className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0 text-cyan-500 dark:text-cyan-400" /> {images[currentIndex].caption}
                 </p>
               </motion.div>

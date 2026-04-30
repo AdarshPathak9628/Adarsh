@@ -106,7 +106,7 @@ export default function Portfolio() {
             <a 
               href="/Adarsh_Pathak_Resume.pdf" 
               download="Adarsh_Pathak_Resume.pdf" 
-              className="px-4 py-1.5 md:px-8 md:py-3 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 dark:from-cyan-500/20 dark:to-blue-500/20 hover:from-cyan-500/30 hover:to-blue-500/30 border border-cyan-500/50 rounded-full transition-all duration-500 font-bold text-[10px] md:text-base flex items-center gap-2 text-cyan-600 dark:text-cyan-300 shadow-[0_0_15px_rgba(0,255,255,0.1)] hover:shadow-[0_0_30px_rgba(0,255,255,0.4)] group"
+              className="px-4 py-1.5 md:px-8 md:py-3 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 dark:from-cyan-500/20 dark:to-blue-500/20 hover:from-cyan-500/30 hover:to-blue-500/30 border border-cyan-500/50 rounded-full transition-all duration-500 font-bold text-xs md:text-base flex items-center gap-2 text-cyan-600 dark:text-cyan-300 shadow-[0_0_15px_rgba(0,255,255,0.1)] hover:shadow-[0_0_30px_rgba(0,255,255,0.4)] group"
             >
               Download CV <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
             </a>
@@ -187,10 +187,10 @@ export default function Portfolio() {
 
         {/* Zone 2: Delhi (Education & Certs) */}
         <section className="min-h-screen w-full flex items-center justify-center md:justify-start px-4 md:px-24 lg:px-40 pointer-events-none py-20">
-          <div className="p-8 md:p-12 bg-card/50 backdrop-blur-2xl rounded-[3rem] border border-green-400/30 shadow-[0_8px_32px_0_rgba(0,255,0,0.1)] w-full max-w-2xl mx-4">
-            <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-700 dark:from-green-300 dark:to-emerald-500 mb-8 md:mb-12 drop-shadow-md uppercase tracking-tighter">Education</h2>
+          <div className="p-8 md:p-12 bg-card/50 backdrop-blur-2xl rounded-[3rem] border border-cyan-400/30 shadow-[0_8px_32px_0_rgba(0,255,255,0.1)] w-full max-w-2xl mx-4">
+            <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-700 dark:from-cyan-300 dark:to-blue-500 mb-8 md:mb-12 drop-shadow-md uppercase tracking-tighter">Education</h2>
             <div className="space-y-6 md:space-y-10">
-              <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-green-400/50 hover:shadow-[0_0_30px_rgba(74,222,128,0.2)] transition-all duration-500 pointer-events-auto">
+              <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] transition-all duration-500 pointer-events-auto">
                 <h3 className="text-2xl md:text-4xl font-bold text-foreground mb-2">MCA</h3>
                 <a href="https://www.lpu.in/" target="_blank" rel="noopener noreferrer" className="text-xl md:text-2xl text-cyan-600 dark:text-cyan-300 font-medium hover:underline inline-flex items-center gap-1 transition-all duration-300">
                   Lovely Professional University <ArrowRight className="w-4 h-4" />
@@ -200,7 +200,7 @@ export default function Portfolio() {
                   <CheckCircle2 className="w-5 h-5 text-cyan-500 dark:text-cyan-400" /> Pursuing advanced computing & scalable systems
                 </div>
               </div>
-              <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-green-400/50 hover:shadow-[0_0_30px_rgba(74,222,128,0.2)] transition-all duration-500 pointer-events-auto group relative overflow-hidden">
+              <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] transition-all duration-500 pointer-events-auto group relative overflow-hidden">
                 <div className="flex justify-between items-start mb-2">
                   <h3 className="text-2xl md:text-4xl font-bold text-foreground">B.Sc + B.Ed</h3>
                   <button 
@@ -238,7 +238,7 @@ export default function Portfolio() {
 
               {/* A Level & O Level (NIELIT) */}
               <div className="flex flex-col md:flex-row gap-6 md:gap-8">
-                <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-green-400/50 hover:shadow-[0_0_30px_rgba(74,222,128,0.2)] transition-all duration-500 pointer-events-auto flex-1 group relative overflow-hidden">
+                <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] transition-all duration-500 pointer-events-auto flex-1 group relative overflow-hidden">
                   <div className="flex justify-between items-start mb-1">
                     <h3 className="text-xl md:text-2xl font-bold text-foreground">A Level (Advanced IT)</h3>
                   </div>
@@ -248,7 +248,7 @@ export default function Portfolio() {
                   <p className="mt-2 text-sm text-foreground/60 font-medium">Present (Ongoing)</p>
                   <p className="mt-1 text-sm text-muted-foreground opacity-60 font-medium uppercase tracking-wider">Advanced IT Credentials</p>
                 </div>
-                <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-green-400/50 hover:shadow-[0_0_30px_rgba(74,222,128,0.2)] transition-all duration-500 pointer-events-auto flex-1 group relative overflow-hidden">
+                <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] transition-all duration-500 pointer-events-auto flex-1 group relative overflow-hidden">
                   <div className="flex justify-between items-start mb-1">
                     <h3 className="text-xl md:text-2xl font-bold text-foreground">O Level (Foundation IT)</h3>
                     <button 
@@ -274,7 +274,7 @@ export default function Portfolio() {
                 </div>
               </div>
               <div className="flex flex-col md:flex-row gap-6 md:gap-8">
-                <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-green-400/50 hover:shadow-[0_0_30px_rgba(74,222,128,0.2)] transition-all duration-500 pointer-events-auto flex-1 group relative overflow-hidden">
+                <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] transition-all duration-500 pointer-events-auto flex-1 group relative overflow-hidden">
                   <div className="flex justify-between items-start mb-1">
                     <h3 className="text-xl md:text-2xl font-bold text-foreground">12th Grade (Intermediate)</h3>
                     <button 
@@ -295,7 +295,7 @@ export default function Portfolio() {
                   <p className="text-lg text-cyan-600 dark:text-cyan-300 font-medium">St. Anthony&apos;s Inter College, Pratapgarh</p>
                   <p className="mt-2 text-sm text-muted-foreground font-medium">2018 – 2020</p>
                 </div>
-                <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-green-400/50 hover:shadow-[0_0_30px_rgba(74,222,128,0.2)] transition-all duration-500 pointer-events-auto flex-1 group relative overflow-hidden">
+                <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] transition-all duration-500 pointer-events-auto flex-1 group relative overflow-hidden">
                   <div className="flex justify-between items-start mb-1">
                     <h3 className="text-xl md:text-2xl font-bold text-foreground">10th Grade (High School)</h3>
                     <button 
@@ -481,8 +481,8 @@ export default function Portfolio() {
         </section>
 
         {/* Ultimate Interactive Contact Hub */}
-        <section id="contact" className="min-h-screen w-full flex items-center justify-center px-4 py-20 pointer-events-none">
-          <div className="p-8 md:p-16 bg-gradient-to-b from-card to-background backdrop-blur-3xl rounded-[3rem] border border-border shadow-[0_0_100px_rgba(0,0,0,0.1)] dark:shadow-[0_0_100px_rgba(255,255,255,0.05)] text-center w-full max-w-5xl mx-4 relative overflow-hidden pointer-events-auto">
+        <section id="contact" className="min-h-screen w-full flex items-center justify-center px-0 md:px-4 py-20 pointer-events-none">
+          <div className="p-8 md:p-16 bg-gradient-to-b from-card to-background backdrop-blur-3xl md:rounded-[3rem] border-y md:border border-border shadow-[0_0_100px_rgba(0,0,0,0.1)] dark:shadow-[0_0_100px_rgba(255,255,255,0.05)] text-center w-full max-w-5xl relative overflow-hidden pointer-events-auto">
             <div 
               className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop')] opacity-5 mix-blend-overlay bg-cover bg-center select-none"
               onContextMenu={(e) => e.preventDefault()}
