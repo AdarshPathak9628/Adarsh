@@ -251,9 +251,9 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
         >
           <button
             onClick={activeAlbum ? () => setActiveAlbum(null) : onClose}
-            className="fixed top-8 right-8 p-4 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-xl transition-all text-white border border-white/10 z-[10001] group"
+            className="fixed top-4 right-4 sm:top-8 sm:right-8 p-3 sm:p-4 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-xl transition-all text-white border border-white/10 z-[10001] group"
           >
-            <X className="w-8 h-8 group-hover:rotate-90 transition-transform duration-300" />
+            <X className="w-6 h-6 sm:w-8 sm:h-8 group-hover:rotate-90 transition-transform duration-300" />
           </button>
 
           <AnimatePresence>

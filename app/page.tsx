@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Scene from "@/components/Scene";
+import dynamic from "next/dynamic";
+const Scene = dynamic(() => import("@/components/Scene"), { ssr: false });
 import CertificatesModal from "@/components/CertificatesModal";
 import { useTheme } from "next-themes";
 import Lenis from "lenis";
@@ -168,11 +169,12 @@ export default function Portfolio() {
                 </p>
               </div>
             </div>
-            <div className="w-full lg:w-1/2 relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden border-2 border-border">
-              <img 
+            <div className="w-full lg:w-1/2 relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden border-2 border-border group">
+              <Image 
                 src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop" 
                 alt="Coding Setup" 
-                className="object-cover w-full h-full opacity-80 select-none"
+                fill
+                className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 select-none"
                 onContextMenu={(e) => e.preventDefault()}
                 onDragStart={(e) => e.preventDefault()}
               />
