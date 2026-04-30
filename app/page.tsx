@@ -502,7 +502,7 @@ export default function Portfolio() {
               </a>
 
               {/* LinkedIn */}
-              <a href="https://linkedin.com/in/adarsh-pathak" target="_blank" rel="noopener noreferrer" className="group">
+              <a href="https://www.linkedin.com/in/adarsh-pathak-14219131b" target="_blank" rel="noopener noreferrer" className="group">
                 <motion.div 
                   whileHover={{ scale: 1.05, rotateX: -10, rotateY: -10 }}
                   whileTap={{ scale: 0.95 }}

@@ -93,7 +93,7 @@ Includes verified mastery in:
 ## 📬 Contact & Networking
 
 *   **Email:** [adarshpathak9628@gmail.com](mailto:adarshpathak9628@gmail.com)
-*   **LinkedIn:** [linkedin.com/in/adarsh-pathak](https://linkedin.com/in/adarsh-pathak)
+*   **LinkedIn:** [linkedin.com/in/adarsh-pathak-14219131b](https://www.linkedin.com/in/adarsh-pathak-14219131b)
 *   **GitHub:** [github.com/AdarshPathak9628](https://github.com/AdarshPathak9628)
 
 ---
