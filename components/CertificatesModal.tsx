@@ -243,7 +243,7 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
         >
           <button
             onClick={activeAlbum ? () => setActiveAlbum(null) : onClose}
-            className="fixed top-8 right-8 p-4 bg-card hover:bg-accent rounded-full backdrop-blur-xl transition-all text-foreground border border-border z-[200] group"
+            className="fixed top-8 right-8 p-4 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-xl transition-all text-white border border-white/10 z-[10001] group"
           >
             <X className="w-8 h-8 group-hover:rotate-90 transition-transform duration-300" />
           </button>
@@ -327,8 +327,8 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                       animate={{ opacity: 1, y: 0 }}
                       className="px-10 py-5 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-md max-w-4xl"
                     >
-                      <p className="text-cyan-300 text-sm md:text-base font-bold italic tracking-wide flex items-center justify-center gap-4">
-                        <Info className="w-5 h-5 flex-shrink-0" /> {activeAlbum.images[currentSlide].caption}
+                      <p className="text-white dark:text-gray-200 text-sm md:text-base font-bold italic tracking-wide flex items-center justify-center gap-4 drop-shadow-md">
+                        <Info className="w-5 h-5 flex-shrink-0 text-cyan-400" /> {activeAlbum.images[currentSlide].caption}
                       </p>
                     </motion.div>
                   </div>
