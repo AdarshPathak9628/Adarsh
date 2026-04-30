@@ -93,8 +93,8 @@ export default function Portfolio() {
             Adarsh Pathak
           </div>
           <a 
-            href="/Resume.pdf" 
-            download 
+            href="/Adarsh_Pathak_Resume.pdf" 
+            download="Adarsh_Pathak_Resume.pdf" 
             className="px-4 py-1.5 md:px-8 md:py-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 hover:from-cyan-500/40 hover:to-blue-500/40 border border-cyan-500/50 rounded-full transition-all duration-500 font-bold text-[10px] md:text-base flex items-center gap-2 text-white shadow-[0_0_15px_rgba(0,255,255,0.1)] hover:shadow-[0_0_30px_rgba(0,255,255,0.4)] group"
           >
             Download CV <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
