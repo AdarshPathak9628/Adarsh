@@ -127,7 +127,7 @@ export default function EduLightbox({ isOpen, onClose, images, title }: EduLight
                 key={currentIndex}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="px-6 md:px-10 py-4 md:py-5 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-md max-w-4xl"
+                className="px-6 md:px-10 py-4 md:py-5 max-w-4xl"
               >
                 <p className="text-cyan-300 text-xs md:text-base font-bold italic tracking-wide flex items-center justify-center gap-3 md:gap-4 text-center leading-relaxed">
                   <Info className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" /> {images[currentIndex].caption}

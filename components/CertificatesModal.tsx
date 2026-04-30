@@ -361,7 +361,7 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                   <span className="text-xs font-bold text-foreground uppercase tracking-[0.3em]">Verified Engineering Portfolio</span>
                 </motion.div>
                 <h2 className="text-4xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-6 drop-shadow-2xl uppercase tracking-tighter">
-                  Credentials Library
+                  Certificates
                 </h2>
                 <p className="text-muted-foreground text-lg md:text-2xl font-medium tracking-wide">
                   Advanced Certifications & Technical Recognitions
@@ -381,7 +381,7 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                     }}
                     className="group relative cursor-pointer"
                   >
-                    <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-border bg-black transition-all duration-500 group-hover:border-cyan-400/50 group-hover:shadow-[0_0_50px_rgba(0,255,255,0.15)]">
+                    <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-border bg-black transition-all duration-500 group-hover:border-cyan-400/50 group-hover:shadow-[0_0_50px_rgba(0,255,255,0.15)] mb-6">
                       <Image
                         src={group.coverImage}
                         alt={group.title}
@@ -392,20 +392,18 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 
-                      <div className="absolute top-6 right-6 px-4 py-2 bg-background/60 backdrop-blur-md rounded-2xl border border-border text-[10px] font-black text-foreground uppercase tracking-widest z-10 whitespace-nowrap">
+                      <div className="absolute top-6 right-6 px-4 py-2 bg-black/60 backdrop-blur-md rounded-2xl border border-white/10 text-[10px] font-black text-white uppercase tracking-widest z-10 whitespace-nowrap">
                         {group.images.length} IMAGES
                       </div>
+                    </div>
 
-                      <div className="absolute inset-0 flex flex-col justify-end p-8">
-                        <div className="p-6 md:p-8 bg-card/80 border-t border-border group-hover:bg-cyan-500/10 transition-colors">
-                          <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 group-hover:text-cyan-400 transition-colors">{group.title}</h3>
-                          <p className="text-muted-foreground text-xs md:text-sm font-bold tracking-widest uppercase mb-4">{group.category}</p>
-                          <div className="flex items-center justify-between text-xs font-bold text-muted-foreground">
-                            <span>{group.date}</span>
-                            <div className="flex items-center gap-1 text-cyan-400 group-hover:translate-x-1 transition-transform">
-                              VIEW <ChevronRight className="w-4 h-4" />
-                            </div>
-                          </div>
+                    <div className="px-4">
+                      <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 group-hover:text-cyan-400 transition-colors uppercase tracking-tight">{group.title}</h3>
+                      <p className="text-muted-foreground text-xs md:text-sm font-bold tracking-widest uppercase mb-4">{group.category}</p>
+                      <div className="flex items-center justify-between text-xs font-bold text-muted-foreground opacity-60">
+                        <span>{group.date}</span>
+                        <div className="flex items-center gap-1 text-cyan-400 group-hover:translate-x-1 transition-transform">
+                          VIEW <ChevronRight className="w-4 h-4" />
                         </div>
                       </div>
                     </div>
