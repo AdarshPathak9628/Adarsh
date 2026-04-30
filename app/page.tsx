@@ -121,7 +121,7 @@ export default function Portfolio() {
             transition={{ duration: 1, ease: "easeOut" }}
             className="text-center p-6 md:p-12 bg-card/50 backdrop-blur-xl rounded-[3rem] border border-border shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] max-w-4xl w-full mx-4"
           >
-            <h1 className="text-5xl sm:text-6xl md:text-8xl font-black bg-clip-text text-transparent bg-gradient-to-br from-foreground via-foreground/80 to-muted-foreground drop-shadow-2xl tracking-tight">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-black bg-clip-text text-transparent bg-gradient-to-br from-foreground via-foreground/80 to-muted-foreground drop-shadow-2xl tracking-tight">
               Adarsh Pathak
             </h1>
             <p className="mt-6 md:mt-8 text-xl sm:text-2xl md:text-3xl font-medium text-cyan-600 dark:text-cyan-200 drop-shadow-lg tracking-wide uppercase letter-spacing-2">
@@ -434,37 +434,46 @@ export default function Portfolio() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {[
-                { title: "MultiShop E-Commerce Platform", tech: "Django, MySQL, Bootstrap", period: "Mar 2024 – Jun 2024", repo: "MultiShop", bullets: [
+                { title: "MultiShop E-Commerce Platform", image: "/multishop.png", tech: "Django, MySQL, Bootstrap", period: "Mar 2024 – Jun 2024", repo: "MultiShop", bullets: [
                   "Architected a scalable online retail ecosystem with secure JWT authentication and dynamic product catalog management.",
-                  "Designed normalized relational schemas utilizing Django ORM for efficient data retrieval and transaction integrity.",
-                  "Integrated real-time cart functionality and complex search/filtering algorithms, improving user conversion rates.",
-                  "Managed the entire deployment lifecycle using Git/GitHub, ensuring modular and maintainable code architecture."
+                  "Designed normalized relational schemas utilizing Django ORM for efficient data retrieval and transaction integrity."
                 ]},
-                { title: "Hospital Management System", tech: "Python, MySQL", period: "Jan 2024 – Feb 2024", repo: "Hospital-Management", bullets: [
+                { title: "Hospital Management System", image: "/hospital.png", tech: "Python, MySQL", period: "Jan 2024 – Feb 2024", repo: "Hospital-Management", bullets: [
                   "Developed a mission-critical healthcare solution for patient intake, scheduling, and billing automation.",
-                  "Implemented Role-Based Access Control (RBAC) to secure sensitive medical records and restrict administrative functions.",
-                  "Engineered robust database structures for high-concurrency handling of patient records and physician schedules.",
-                  "Automated outpatient department (OPD) workflows, reducing administrative overhead by 40%."
+                  "Implemented Role-Based Access Control (RBAC) to secure sensitive medical records and restrict administrative functions."
                 ]}
               ].map(proj => (
-                <div key={proj.title} className="bg-card/50 p-8 rounded-[2rem] border border-border hover:border-purple-500/50 hover:-translate-y-2 transition-all duration-300 pointer-events-auto flex flex-col group shadow-xl">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
-                    <h3 className="text-2xl font-bold text-foreground group-hover:text-purple-500 transition-colors">{proj.title}</h3>
-                    <span className="text-xs text-muted-foreground font-medium whitespace-nowrap">{proj.period}</span>
+                <div key={proj.title} className="bg-card/50 rounded-[2.5rem] border border-border hover:border-purple-500/50 hover:-translate-y-2 transition-all duration-500 pointer-events-auto flex flex-col group shadow-xl overflow-hidden">
+                  <div className="relative h-48 md:h-64 w-full">
+                    <Image 
+                      src={proj.image} 
+                      alt={proj.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <span className="px-3 py-1 bg-purple-500 text-white rounded-full text-[10px] font-black uppercase tracking-widest">
+                        {proj.tech}
+                      </span>
+                    </div>
                   </div>
-                  <div className="inline-block px-4 py-1.5 bg-purple-500/20 text-purple-600 dark:text-purple-200 rounded-full text-xs font-bold mb-6 self-start">
-                    {proj.tech}
+                  <div className="p-8">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+                      <h3 className="text-xl md:text-2xl font-bold text-foreground group-hover:text-purple-500 transition-colors tracking-tight">{proj.title}</h3>
+                      <span className="text-xs text-muted-foreground font-medium">{proj.period}</span>
+                    </div>
+                    <ul className="text-foreground/70 text-sm md:text-base leading-relaxed font-medium flex-grow mb-8 space-y-2 list-disc list-inside">
+                      {proj.bullets.map((b, i) => <li key={i}>{b}</li>)}
+                    </ul>
+                    
+                    <a 
+                      href={`https://github.com/AdarshPathak9628/${proj.repo}`} target="_blank" rel="noopener noreferrer"
+                      className="w-full py-4 bg-card hover:bg-purple-500/20 border border-border hover:border-purple-500/50 rounded-2xl transition-all font-bold text-sm flex items-center justify-center gap-2 text-foreground group-hover:shadow-[0_0_30px_rgba(128,0,128,0.3)] mt-auto"
+                    >
+                      <Github className="w-5 h-5" /> Source Code
+                    </a>
                   </div>
-                  <ul className="text-foreground/70 text-sm md:text-base leading-relaxed font-medium flex-grow mb-8 space-y-2 list-disc list-inside">
-                    {proj.bullets.map((b, i) => <li key={i}>{b}</li>)}
-                  </ul>
-                  
-                  <a 
-                    href={`https://github.com/AdarshPathak9628/${proj.repo}`} target="_blank" rel="noopener noreferrer"
-                    className="w-full py-3 bg-card hover:bg-purple-500/20 border border-border hover:border-purple-500/50 rounded-xl transition-all font-bold text-sm flex items-center justify-center gap-2 text-foreground group-hover:shadow-[0_0_20px_rgba(128,0,128,0.3)] mt-auto"
-                  >
-                    <Github className="w-4 h-4" /> View Source Code
-                  </a>
                 </div>
               ))}
             </div>
@@ -513,7 +522,7 @@ export default function Portfolio() {
                   <div className="p-4 bg-blue-500/20 rounded-full group-hover:bg-blue-500/40 transition-colors group-hover:shadow-[0_0_30px_rgba(96,165,250,0.6)]">
                     <Mail className="w-8 h-8 text-blue-500 dark:text-blue-400" />
                   </div>
-                  <span className="text-foreground font-bold text-md md:text-lg break-all">adarshpathak...</span>
+                  <span className="text-foreground font-bold text-xs md:text-sm lg:text-base break-all px-2 text-center">adarshpathak9628@gmail.com</span>
                 </motion.div>
               </a>
 
