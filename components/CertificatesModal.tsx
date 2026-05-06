@@ -335,8 +335,8 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                       animate={{ opacity: 1, y: 0 }}
                       className="px-10 py-5 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-md max-w-4xl"
                     >
-                      <p className="text-zinc-900 dark:text-gray-200 text-sm md:text-base font-bold italic tracking-wide flex items-center justify-center gap-4 drop-shadow-sm">
-                        <Info className="w-5 h-5 flex-shrink-0 text-cyan-500 dark:text-cyan-400" /> {activeAlbum.images[currentSlide].caption}
+                      <p className="text-gray-200 text-sm md:text-base font-bold italic tracking-wide flex items-center justify-center gap-4 drop-shadow-sm">
+                        <Info className="w-5 h-5 flex-shrink-0 text-cyan-400" /> {activeAlbum.images[currentSlide].caption}
                       </p>
                     </motion.div>
                   </div>
@@ -363,15 +363,15 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="inline-flex items-center gap-3 px-6 py-2 bg-card border border-border rounded-full mb-8"
+                  className="inline-flex items-center gap-3 px-6 py-2 bg-white/5 border border-white/10 rounded-full mb-8"
                 >
                   <LayoutGrid className="w-4 h-4 text-cyan-400" />
-                  <span className="text-xs font-bold text-foreground uppercase tracking-[0.3em]">Verified Engineering Portfolio</span>
+                  <span className="text-xs font-bold text-gray-300 uppercase tracking-[0.3em]">Verified Engineering Portfolio</span>
                 </motion.div>
-                <h2 className="text-6xl md:text-9xl font-black text-zinc-800 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-cyan-400 dark:to-blue-500 mb-6 drop-shadow-2xl uppercase tracking-tighter">
+                <h2 className="text-6xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-6 drop-shadow-2xl uppercase tracking-tighter">
                   Certificates
                 </h2>
-                <p className="text-muted-foreground text-lg md:text-2xl font-medium tracking-wide">
+                <p className="text-gray-400 text-lg md:text-2xl font-medium tracking-wide">
                   Advanced Certifications & Technical Recognitions
                 </p>
               </div>
@@ -406,9 +406,9 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                     </div>
 
                     <div className="px-4">
-                      <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 group-hover:text-cyan-400 transition-colors uppercase tracking-tight">{group.title}</h3>
-                      <p className="text-muted-foreground text-xs md:text-sm font-bold tracking-widest uppercase mb-4">{group.category}</p>
-                      <div className="flex items-center justify-between text-xs font-bold text-muted-foreground opacity-60">
+                      <h3 className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors uppercase tracking-tight">{group.title}</h3>
+                      <p className="text-gray-400 text-xs md:text-sm font-bold tracking-widest uppercase mb-4">{group.category}</p>
+                      <div className="flex items-center justify-between text-xs font-bold text-gray-500">
                         <span>{group.date}</span>
                         <div className="flex items-center gap-1 text-cyan-400 group-hover:translate-x-1 transition-transform">
                           VIEW <ChevronRight className="w-4 h-4" />
