@@ -389,7 +389,7 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                     }}
                     className="group relative cursor-pointer"
                   >
-                    <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-border bg-black transition-all duration-500 group-hover:border-cyan-400/50 group-hover:shadow-[0_0_50px_rgba(0,255,255,0.15)] mb-6">
+                    <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-border bg-black transition-all duration-500 group-hover:border-cyan-400/60 group-hover:shadow-[0_0_50px_rgba(0,255,255,0.3)] group-hover:-translate-y-2 mb-6">
                       <Image
                         src={group.coverImage}
                         alt={group.title}

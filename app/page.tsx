@@ -190,7 +190,7 @@ export default function Portfolio() {
           <div className="p-8 md:p-12 bg-card/50 backdrop-blur-2xl rounded-[3rem] border border-cyan-400/30 shadow-[0_8px_32px_0_rgba(0,255,255,0.1)] w-full max-w-2xl mx-4">
             <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-700 dark:from-cyan-300 dark:to-blue-500 mb-8 md:mb-12 drop-shadow-md uppercase tracking-tighter">Education</h2>
             <div className="space-y-6 md:space-y-10">
-              <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] transition-all duration-500 pointer-events-auto">
+              <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-cyan-400/60 hover:shadow-[0_0_40px_rgba(6,182,212,0.3)] hover:-translate-y-1 transition-all duration-500 pointer-events-auto">
                 <h3 className="text-2xl md:text-4xl font-bold text-foreground mb-2">MCA</h3>
                 <a href="https://www.lpu.in/" target="_blank" rel="noopener noreferrer" className="text-xl md:text-2xl text-cyan-600 dark:text-cyan-300 font-medium hover:underline inline-flex items-center gap-1 transition-all duration-300">
                   Lovely Professional University <ArrowRight className="w-4 h-4" />
@@ -200,7 +200,7 @@ export default function Portfolio() {
                   <CheckCircle2 className="w-5 h-5 text-cyan-500 dark:text-cyan-400" /> Pursuing advanced computing & scalable systems
                 </div>
               </div>
-              <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] transition-all duration-500 pointer-events-auto group relative overflow-hidden">
+              <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-cyan-400/60 hover:shadow-[0_0_40px_rgba(6,182,212,0.3)] hover:-translate-y-1 transition-all duration-500 pointer-events-auto group relative overflow-hidden">
                 <div className="flex justify-between items-start mb-2">
                   <h3 className="text-2xl md:text-4xl font-bold text-foreground">B.Sc + B.Ed</h3>
                   <button 
@@ -238,7 +238,7 @@ export default function Portfolio() {
 
               {/* A Level & O Level (NIELIT) */}
               <div className="flex flex-col md:flex-row gap-6 md:gap-8">
-                <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] transition-all duration-500 pointer-events-auto flex-1 group relative overflow-hidden">
+                <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-cyan-400/60 hover:shadow-[0_0_40px_rgba(6,182,212,0.3)] hover:-translate-y-1 transition-all duration-500 pointer-events-auto flex-1 group relative overflow-hidden">
                   <div className="flex justify-between items-start mb-1">
                     <h3 className="text-xl md:text-2xl font-bold text-foreground">A Level (Advanced IT)</h3>
                   </div>
@@ -248,7 +248,7 @@ export default function Portfolio() {
                   <p className="mt-2 text-sm text-foreground/60 font-medium">Present (Ongoing)</p>
                   <p className="mt-1 text-sm text-muted-foreground opacity-60 font-medium uppercase tracking-wider">Advanced IT Credentials</p>
                 </div>
-                <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] transition-all duration-500 pointer-events-auto flex-1 group relative overflow-hidden">
+                <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-cyan-400/60 hover:shadow-[0_0_40px_rgba(6,182,212,0.3)] hover:-translate-y-1 transition-all duration-500 pointer-events-auto flex-1 group relative overflow-hidden">
                   <div className="flex justify-between items-start mb-1">
                     <h3 className="text-xl md:text-2xl font-bold text-foreground">O Level (Foundation IT)</h3>
                     <button 
@@ -274,7 +274,7 @@ export default function Portfolio() {
                 </div>
               </div>
               <div className="flex flex-col md:flex-row gap-6 md:gap-8">
-                <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] transition-all duration-500 pointer-events-auto flex-1 group relative overflow-hidden">
+                <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-cyan-400/60 hover:shadow-[0_0_40px_rgba(6,182,212,0.3)] hover:-translate-y-1 transition-all duration-500 pointer-events-auto flex-1 group relative overflow-hidden">
                   <div className="flex justify-between items-start mb-1">
                     <h3 className="text-xl md:text-2xl font-bold text-foreground">12th Grade (Intermediate)</h3>
                     <button 
@@ -295,7 +295,7 @@ export default function Portfolio() {
                   <p className="text-lg text-cyan-600 dark:text-cyan-300 font-medium">St. Anthony&apos;s Inter College, Pratapgarh</p>
                   <p className="mt-2 text-sm text-muted-foreground font-medium">2018 – 2020</p>
                 </div>
-                <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] transition-all duration-500 pointer-events-auto flex-1 group relative overflow-hidden">
+                <div className="bg-card/30 p-6 md:p-8 rounded-[2rem] border border-border hover:border-cyan-400/60 hover:shadow-[0_0_40px_rgba(6,182,212,0.3)] hover:-translate-y-1 transition-all duration-500 pointer-events-auto flex-1 group relative overflow-hidden">
                   <div className="flex justify-between items-start mb-1">
                     <h3 className="text-xl md:text-2xl font-bold text-foreground">10th Grade (High School)</h3>
                     <button 
@@ -322,7 +322,7 @@ export default function Portfolio() {
             <div className="mt-12 pointer-events-auto">
               <button 
                 onClick={() => setIsCertModalOpen(true)}
-                className="w-full py-5 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 hover:from-cyan-500/40 hover:to-blue-500/40 border border-cyan-500/50 rounded-2xl transition-all font-bold text-lg md:text-xl flex items-center justify-center gap-3 text-white shadow-[0_0_20px_rgba(0,255,255,0.2)] hover:shadow-[0_0_40px_rgba(0,255,255,0.4)]"
+                className="w-full py-5 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 hover:from-cyan-500/40 hover:to-blue-500/40 border border-cyan-500/50 rounded-2xl transition-all font-bold text-lg md:text-xl flex items-center justify-center gap-3 text-white shadow-[0_0_20px_rgba(0,255,255,0.2)] hover:shadow-[0_0_40px_rgba(0,255,255,0.5)] hover:-translate-y-1 hover:scale-[1.01]"
               >
                 <Award className="w-6 h-6" /> View All Credentials & Achievements
               </button>
@@ -338,7 +338,7 @@ export default function Portfolio() {
               Experience
             </h2>
             <div className="space-y-6 md:space-y-8 relative">
-              <div className="bg-card/40 p-6 md:p-8 rounded-[2rem] border border-border hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] transition-all duration-500">
+              <div className="bg-card/40 p-6 md:p-8 rounded-[2rem] border border-border hover:border-blue-500/60 hover:shadow-[0_0_40px_rgba(59,130,246,0.3)] hover:-translate-y-1 transition-all duration-500">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
                    <h3 className="text-2xl md:text-3xl font-bold text-foreground leading-tight">Django Backend Developer (Intern)</h3>
                   <span className="text-sm text-foreground/60 font-medium whitespace-nowrap">Aug 2024 – Oct 2024</span>
@@ -351,7 +351,7 @@ export default function Portfolio() {
                   <li>Collaborated with development teams to debug issues, enhance application features, and improve system performance.</li>
                 </ul>
               </div>
-              <div className="bg-card/40 p-6 md:p-8 rounded-[2rem] border border-border hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] transition-all duration-500 group relative overflow-hidden pointer-events-auto">
+              <div className="bg-card/40 p-6 md:p-8 rounded-[2rem] border border-border hover:border-blue-500/60 hover:shadow-[0_0_40px_rgba(59,130,246,0.3)] hover:-translate-y-1 transition-all duration-500 group relative overflow-hidden pointer-events-auto">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
                   <div className="flex items-center gap-4">
                     <h3 className="text-2xl md:text-3xl font-bold text-foreground leading-tight">Python Web Development Trainee</h3>
@@ -398,7 +398,7 @@ export default function Portfolio() {
                   <h3 className="text-cyan-600 dark:text-cyan-400 text-xs font-bold tracking-widest uppercase mb-2">{group.category}</h3>
                   <div className="flex flex-wrap gap-2">
                     {group.items.split(', ').map(skill => (
-                      <span key={skill} className="px-3 py-1.5 bg-card/40 border border-border hover:border-cyan-400/50 hover:bg-cyan-500/10 rounded-full text-xs md:text-sm font-semibold transition-colors text-muted-foreground">
+                      <span key={skill} className="px-3 py-1.5 bg-card/40 border border-border hover:border-cyan-400/60 hover:bg-cyan-500/20 hover:scale-105 hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] rounded-full text-xs md:text-sm font-semibold transition-all duration-300 text-muted-foreground cursor-default">
                         {skill}
                       </span>
                     ))}
@@ -427,7 +427,7 @@ export default function Portfolio() {
               </h2>
               <a 
                 href="https://github.com/AdarshPathak9628/" target="_blank" rel="noopener noreferrer"
-                className="px-6 py-3 bg-foreground text-background hover:bg-foreground/90 border border-border rounded-full transition-all duration-500 font-bold text-xs md:text-sm flex items-center gap-2 pointer-events-auto shadow-lg hover:shadow-xl"
+                className="px-6 py-3 bg-foreground text-background hover:bg-foreground/90 border border-border rounded-full transition-all duration-500 font-bold text-xs md:text-sm flex items-center gap-2 pointer-events-auto shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:scale-105"
               >
                 <Github className="w-4 h-4" /> View All on GitHub
               </a>
@@ -443,7 +443,7 @@ export default function Portfolio() {
                   "Implemented Role-Based Access Control (RBAC) to secure sensitive medical records and restrict administrative functions."
                 ]}
               ].map(proj => (
-                <div key={proj.title} className="bg-card/50 rounded-[2.5rem] border border-border hover:border-purple-500/50 hover:-translate-y-2 transition-all duration-500 pointer-events-auto flex flex-col group shadow-xl overflow-hidden">
+                <div key={proj.title} className="bg-card/50 rounded-[2.5rem] border border-border hover:border-purple-500/60 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(128,0,128,0.25)] transition-all duration-500 pointer-events-auto flex flex-col group shadow-xl overflow-hidden">
                   <div className="relative h-48 md:h-64 w-full">
                     <Image 
                       src={proj.image} 
