@@ -104,8 +104,8 @@ export default function Portfolio() {
               {mounted && (theme === "dark" ? <Sun className="w-4 h-4 md:w-5 md:h-5 text-yellow-400" /> : <Moon className="w-4 h-4 md:w-5 md:h-5 text-blue-600" />)}
             </button>
             <a 
-              href="/Adarsh_Pathak_Resume.pdf" 
-              download="Adarsh_Pathak_Resume.pdf" 
+              href="/adarsh_cv.pdf" 
+              download="adarsh_cv.pdf" 
               className="px-4 py-1.5 md:px-8 md:py-3 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 dark:from-cyan-500/20 dark:to-blue-500/20 hover:from-cyan-500/30 hover:to-blue-500/30 border border-cyan-500/50 rounded-full transition-all duration-500 font-bold text-xs md:text-base flex items-center gap-2 text-cyan-600 dark:text-cyan-300 shadow-[0_0_15px_rgba(0,255,255,0.1)] hover:shadow-[0_0_30px_rgba(0,255,255,0.4)] group"
             >
               Download CV <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
@@ -152,7 +152,7 @@ export default function Portfolio() {
 
         {/* Zone 1.5: About Me (Deep Story) */}
         <section className="min-h-screen w-full flex items-center justify-center px-4 md:px-24 py-32 pointer-events-none">
-          <div className="bg-card/50 backdrop-blur-2xl rounded-[3rem] border border-border p-8 md:p-16 max-w-7xl w-full mx-4 shadow-2xl flex flex-col lg:flex-row gap-12 items-center">
+          <div className="bg-card/50 backdrop-blur-2xl rounded-[3rem] border border-border p-8 md:p-16 max-w-7xl w-full mx-4 shadow-2xl flex flex-col lg:flex-row gap-12 items-center hover:border-blue-500/60 hover:shadow-[0_0_40px_rgba(59,130,246,0.3)] hover:-translate-y-1 transition-all duration-500 pointer-events-auto">
             <div className="w-full lg:w-1/2 space-y-8">
               <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-700 dark:from-blue-300 dark:to-indigo-500 uppercase tracking-tighter">
                 My Roots & Vision
@@ -338,7 +338,7 @@ export default function Portfolio() {
               Experience
             </h2>
             <div className="space-y-6 md:space-y-8 relative">
-              <div className="bg-card/40 p-6 md:p-8 rounded-[2rem] border border-border hover:border-blue-500/60 hover:shadow-[0_0_40px_rgba(59,130,246,0.3)] hover:-translate-y-1 transition-all duration-500">
+              <div className="bg-card/40 p-6 md:p-8 rounded-[2rem] border border-border hover:border-blue-500/60 hover:shadow-[0_0_40px_rgba(59,130,246,0.3)] hover:-translate-y-1 transition-all duration-500 pointer-events-auto group">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
                    <h3 className="text-2xl md:text-3xl font-bold text-foreground leading-tight">Django Backend Developer (Intern)</h3>
                   <span className="text-sm text-foreground/60 font-medium whitespace-nowrap">Aug 2024 – Oct 2024</span>
@@ -383,7 +383,7 @@ export default function Portfolio() {
             </div>
           </div>
 
-          <div className="p-8 md:p-12 bg-card/50 backdrop-blur-2xl rounded-[3rem] border border-cyan-400/30 shadow-[0_8px_32px_0_rgba(0,255,255,0.1)] w-full max-w-lg text-left mx-4 mt-12 xl:mt-0 pointer-events-auto">
+          <div className="p-8 md:p-12 bg-card/50 backdrop-blur-2xl rounded-[3rem] border border-cyan-400/30 shadow-[0_8px_32px_0_rgba(0,255,255,0.1)] hover:border-cyan-400/60 hover:shadow-[0_0_40px_rgba(6,182,212,0.3)] hover:-translate-y-1 transition-all duration-500 w-full max-w-lg text-left mx-4 mt-12 xl:mt-0 pointer-events-auto">
             <h2 className="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-700 dark:from-cyan-300 dark:to-blue-500 mb-8 drop-shadow-md text-center uppercase tracking-tight">Core Technical Stack</h2>
             <div className="space-y-6">
               {[

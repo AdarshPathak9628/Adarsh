@@ -244,14 +244,14 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4 }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 backdrop-blur-3xl overflow-hidden"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-slate-50/95 dark:bg-black/95 backdrop-blur-3xl overflow-hidden"
           onClick={(e) => {
             if (e.target === e.currentTarget) onClose();
           }}
         >
           <button
             onClick={activeAlbum ? () => setActiveAlbum(null) : onClose}
-            className="fixed top-4 right-4 sm:top-8 sm:right-8 p-3 sm:p-4 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-xl transition-all text-white border border-white/10 z-[10001] group"
+            className="fixed top-4 right-4 sm:top-8 sm:right-8 p-3 sm:p-4 bg-black/5 hover:bg-black/10 dark:bg-white/10 dark:hover:bg-white/20 rounded-full backdrop-blur-xl transition-all text-zinc-900 dark:text-white border border-black/10 dark:border-white/10 z-[10001] group"
           >
             <X className="w-6 h-6 sm:w-8 sm:h-8 group-hover:rotate-90 transition-transform duration-300" />
           </button>
@@ -262,7 +262,7 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 z-[10000] bg-black/95 flex flex-col items-center"
+                className="fixed inset-0 z-[10000] bg-slate-50/95 dark:bg-black/95 flex flex-col items-center"
                 onClick={(e) => {
                   if (e.target === e.currentTarget) setActiveAlbum(null);
                 }}
@@ -272,11 +272,11 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                   onClick={(e) => e.stopPropagation()}
                 >
                   <div className="flex flex-wrap items-center justify-center gap-3 mb-2">
-                    <p className="text-cyan-400 font-bold uppercase tracking-[0.3em] text-[10px]">{activeAlbum.category}</p>
-                    <span className="w-1 h-1 bg-white/30 rounded-full shrink-0" />
-                    <p className="text-gray-300 font-bold uppercase tracking-[0.2em] text-[10px]">{activeAlbum.date}</p>
+                    <p className="text-cyan-600 dark:text-cyan-400 font-bold uppercase tracking-[0.3em] text-[10px]">{activeAlbum.category}</p>
+                    <span className="w-1 h-1 bg-black/30 dark:bg-white/30 rounded-full shrink-0" />
+                    <p className="text-zinc-600 dark:text-gray-300 font-bold uppercase tracking-[0.2em] text-[10px]">{activeAlbum.date}</p>
                   </div>
-                  <h3 className="text-2xl md:text-5xl font-black text-white leading-tight">{activeAlbum.title}</h3>
+                  <h3 className="text-2xl md:text-5xl font-black text-zinc-900 dark:text-white leading-tight">{activeAlbum.title}</h3>
                 </div>
 
                 <div
@@ -287,15 +287,15 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                     <>
                       <button
                         onClick={prevSlide}
-                        className="absolute left-4 md:left-8 z-10 p-5 bg-white/5 hover:bg-white/15 rounded-full border border-white/10 transition-all opacity-0 group-hover:opacity-100 hover:scale-110"
+                        className="absolute left-4 md:left-8 z-10 p-5 bg-black/5 hover:bg-black/15 dark:bg-white/5 dark:hover:bg-white/15 rounded-full border border-black/10 dark:border-white/10 transition-all opacity-0 group-hover:opacity-100 hover:scale-110"
                       >
-                        <ChevronLeft className="w-8 h-8 text-white" />
+                        <ChevronLeft className="w-8 h-8 text-zinc-900 dark:text-white" />
                       </button>
                       <button
                         onClick={nextSlide}
-                        className="absolute right-4 md:right-8 z-10 p-5 bg-white/5 hover:bg-white/15 rounded-full border border-white/10 transition-all opacity-0 group-hover:opacity-100 hover:scale-110"
+                        className="absolute right-4 md:right-8 z-10 p-5 bg-black/5 hover:bg-black/15 dark:bg-white/5 dark:hover:bg-white/15 rounded-full border border-black/10 dark:border-white/10 transition-all opacity-0 group-hover:opacity-100 hover:scale-110"
                       >
-                        <ChevronRight className="w-8 h-8 text-white" />
+                        <ChevronRight className="w-8 h-8 text-zinc-900 dark:text-white" />
                       </button>
                     </>
                   )}
@@ -313,7 +313,7 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                         <Image
                           src={activeAlbum.images[currentSlide].src}
                           alt={activeAlbum.title}
-                          className="object-contain w-full h-full rounded-xl shadow-[0_0_80px_rgba(0,0,0,0.5)] border border-white/5 select-none"
+                          className="object-contain w-full h-full rounded-xl shadow-[0_0_80px_rgba(0,0,0,0.1)] dark:shadow-[0_0_80px_rgba(0,0,0,0.5)] border border-black/5 dark:border-white/5 select-none"
                           quality={100}
                           priority
                           onContextMenu={(e) => e.preventDefault()}
@@ -333,17 +333,17 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                       key={currentSlide}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="px-10 py-5 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-md max-w-4xl"
+                      className="px-10 py-5 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-2xl backdrop-blur-md max-w-4xl"
                     >
-                      <p className="text-gray-200 text-sm md:text-base font-bold italic tracking-wide flex items-center justify-center gap-4 drop-shadow-sm">
-                        <Info className="w-5 h-5 flex-shrink-0 text-cyan-400" /> {activeAlbum.images[currentSlide].caption}
+                      <p className="text-zinc-800 dark:text-gray-200 text-sm md:text-base font-bold italic tracking-wide flex items-center justify-center gap-4 drop-shadow-sm">
+                        <Info className="w-5 h-5 flex-shrink-0 text-cyan-600 dark:text-cyan-400" /> {activeAlbum.images[currentSlide].caption}
                       </p>
                     </motion.div>
                   </div>
 
                   <div className="flex gap-3 pb-8">
                     {activeAlbum.images.map((_, i) => (
-                      <div key={i} className={`h-1.5 rounded-full transition-all duration-500 ${i === currentSlide ? "w-12 bg-cyan-400" : "w-4 bg-white/10"}`} />
+                      <div key={i} className={`h-1.5 rounded-full transition-all duration-500 ${i === currentSlide ? "w-12 bg-cyan-600 dark:bg-cyan-400" : "w-4 bg-black/10 dark:bg-white/10"}`} />
                     ))}
                   </div>
                 </div>
@@ -363,15 +363,15 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="inline-flex items-center gap-3 px-6 py-2 bg-white/5 border border-white/10 rounded-full mb-8"
+                  className="inline-flex items-center gap-3 px-6 py-2 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-full mb-8"
                 >
-                  <LayoutGrid className="w-4 h-4 text-cyan-400" />
-                  <span className="text-xs font-bold text-gray-300 uppercase tracking-[0.3em]">Verified Engineering Portfolio</span>
+                  <LayoutGrid className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
+                  <span className="text-xs font-bold text-zinc-600 dark:text-gray-300 uppercase tracking-[0.3em]">Verified Engineering Portfolio</span>
                 </motion.div>
-                <h2 className="text-6xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-6 drop-shadow-2xl uppercase tracking-tighter">
+                <h2 className="text-6xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-700 dark:from-cyan-400 dark:to-blue-500 mb-6 drop-shadow-2xl uppercase tracking-tighter">
                   Certificates
                 </h2>
-                <p className="text-gray-400 text-lg md:text-2xl font-medium tracking-wide">
+                <p className="text-zinc-600 dark:text-gray-400 text-lg md:text-2xl font-medium tracking-wide">
                   Advanced Certifications & Technical Recognitions
                 </p>
               </div>
@@ -389,28 +389,28 @@ export default function CertificatesModal({ isOpen, onClose, initialAlbumId }: C
                     }}
                     className="group relative cursor-pointer"
                   >
-                    <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-border bg-black transition-all duration-500 group-hover:border-cyan-400/60 group-hover:shadow-[0_0_50px_rgba(0,255,255,0.3)] group-hover:-translate-y-2 mb-6">
+                    <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-zinc-400 dark:border-white/10 bg-gray-100 dark:bg-black transition-all duration-500 group-hover:border-cyan-500/60 group-hover:shadow-[0_0_50px_rgba(0,255,255,0.2)] dark:group-hover:shadow-[0_0_50px_rgba(0,255,255,0.3)] group-hover:-translate-y-2 mb-6">
                       <Image
                         src={group.coverImage}
                         alt={group.title}
                         fill
-                        className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 select-none"
+                        className="object-cover opacity-80 dark:opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 select-none"
                         onContextMenu={(e) => e.preventDefault()}
                         onDragStart={(e) => e.preventDefault()}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 
-                      <div className="absolute top-6 right-6 px-4 py-2 bg-black/60 backdrop-blur-md rounded-2xl border border-white/10 text-[10px] font-black text-white uppercase tracking-widest z-10 whitespace-nowrap">
+                      <div className="absolute top-6 right-6 px-4 py-2 bg-white/90 dark:bg-black/60 backdrop-blur-md rounded-2xl border border-black/10 dark:border-white/10 text-[10px] font-black text-zinc-900 dark:text-white uppercase tracking-widest z-10 whitespace-nowrap">
                         {group.images.length} IMAGES
                       </div>
                     </div>
 
                     <div className="px-4">
-                      <h3 className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors uppercase tracking-tight">{group.title}</h3>
-                      <p className="text-gray-400 text-xs md:text-sm font-bold tracking-widest uppercase mb-4">{group.category}</p>
-                      <div className="flex items-center justify-between text-xs font-bold text-gray-500">
+                      <h3 className="text-xl md:text-2xl font-bold text-zinc-900 dark:text-white mb-2 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors uppercase tracking-tight">{group.title}</h3>
+                      <p className="text-zinc-600 dark:text-gray-400 text-xs md:text-sm font-bold tracking-widest uppercase mb-4">{group.category}</p>
+                      <div className="flex items-center justify-between text-xs font-bold text-zinc-500 dark:text-gray-500">
                         <span>{group.date}</span>
-                        <div className="flex items-center gap-1 text-cyan-400 group-hover:translate-x-1 transition-transform">
+                        <div className="flex items-center gap-1 text-cyan-600 dark:text-cyan-400 group-hover:translate-x-1 transition-transform">
                           VIEW <ChevronRight className="w-4 h-4" />
                         </div>
                       </div>

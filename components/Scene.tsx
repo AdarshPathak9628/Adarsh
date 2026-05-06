@@ -138,30 +138,30 @@ const SceneContent = () => {
 
       {/* ── Zone 1: Hero ── */}
       <group position={[0, 0, -20]}>
-        <WireframeSphere position={[-5, 5, -4]} radius={6} color="#0c4a6e" />
-        <OrbitRing position={[-5, 5, -4]} radius={8} color="#155e75" speed={0.1} />
+        <WireframeSphere position={[-5, 5, -4]} radius={6} color={theme === "dark" ? "#0c4a6e" : "#0f172a"} />
+        <OrbitRing position={[-5, 5, -4]} radius={8} color={theme === "dark" ? "#155e75" : "#1e3a8a"} speed={0.1} />
       </group>
 
       {/* ── Zone 2: Education ── */}
       <group position={[-5, 0, -5]}>
-        <WireframeSphere position={[0, 5, 0]} radius={3.5} color="#312e81" />
-        <OrbitRing position={[0, 5, 0]} radius={5} color="#4338ca" speed={0.12} />
+        <WireframeSphere position={[0, 5, 0]} radius={3.5} color={theme === "dark" ? "#312e81" : "#172554"} />
+        <OrbitRing position={[0, 5, 0]} radius={5} color={theme === "dark" ? "#4338ca" : "#1e3a8a"} speed={0.12} />
       </group>
 
       {/* ── Zone 3: Experience ── */}
       <group position={[2, 0, 5]}>
-        <WireframeSphere position={[0, 4, 0]} radius={3} color="#1e3a5f" />
-        <OrbitRing position={[0, 4, 0]} radius={4.5} color="#1e40af" speed={0.08} />
+        <WireframeSphere position={[0, 4, 0]} radius={3} color={theme === "dark" ? "#1e3a5f" : "#0f172a"} />
+        <OrbitRing position={[0, 4, 0]} radius={4.5} color={theme === "dark" ? "#1e40af" : "#1e3a8a"} speed={0.08} />
       </group>
 
       {/* ── Zone 4: Projects ── */}
       <group position={[15, 0, 10]}>
-        <WireframeSphere position={[0, 5, 0]} radius={3} color="#164e63" />
-        <OrbitRing position={[0, 5, 0]} radius={4.5} color="#0e7490" speed={0.1} />
+        <WireframeSphere position={[0, 5, 0]} radius={3} color={theme === "dark" ? "#164e63" : "#0f172a"} />
+        <OrbitRing position={[0, 5, 0]} radius={4.5} color={theme === "dark" ? "#0e7490" : "#172554"} speed={0.1} />
       </group>
 
       {/* Particles */}
-      <FloatingParticles count={120} area={70} color="#0c4a6e" />
+      <FloatingParticles count={120} area={70} color={theme === "dark" ? "#0c4a6e" : "#0f172a"} />
     </group>
   );
 };
