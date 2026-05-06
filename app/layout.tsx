@@ -6,6 +6,7 @@ import { Suspense } from "react"
 import "./globals.css"
 
 import { ThemeProvider } from "@/components/theme-provider"
+import AntiTheft from "@/components/AntiTheft"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
@@ -37,13 +38,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body className={`font-sans ${inter.variable} antialiased`}>
+      <body className={`font-sans ${inter.variable} antialiased select-none`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
+          <AntiTheft />
           <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
           <Analytics />
         </ThemeProvider>
